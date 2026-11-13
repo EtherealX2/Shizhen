@@ -1,0 +1,1902 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="sv">
+<context>
+    <name>AboutDialog</name>
+    <message>
+        <source>About </source>
+        <translation>Om </translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Om</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Utvecklare</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Stäng</translation>
+    </message>
+    <message>
+        <source>Donate</source>
+        <translation>Donera</translation>
+    </message>
+    <message>
+        <source>Contact</source>
+        <translation>Kontakt</translation>
+    </message>
+</context>
+<context>
+    <name>AboutTab</name>
+    <message>
+        <source>License: </source>
+        <translation>Licens: </translation>
+    </message>
+    <message>
+        <source>Screenshot and Annotation Tool</source>
+        <translation>Skärmklipps- och anteckningsverktyg</translation>
+    </message>
+</context>
+<context>
+    <name>ActionSettingTab</name>
+    <message>
+        <source>Name</source>
+        <translation>Namn</translation>
+    </message>
+    <message>
+        <source>Shortcut</source>
+        <translation>Genväg</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Rensa</translation>
+    </message>
+    <message>
+        <source>Take Capture</source>
+        <translation>Ta skärmklipp</translation>
+    </message>
+    <message>
+        <source>Include Cursor</source>
+        <translation>Inkludera muspekare</translation>
+    </message>
+    <message>
+        <source>Delay</source>
+        <translation>Fördröjning</translation>
+    </message>
+    <message>
+        <source>s</source>
+        <extracomment>The small letter s stands for seconds.</extracomment>
+        <translation>s</translation>
+    </message>
+    <message>
+        <source>Capture Mode</source>
+        <translation>Skärmklippsläge</translation>
+    </message>
+    <message>
+        <source>Show image in Pin Window</source>
+        <translation>Visa bilden i ett fäst fönster</translation>
+    </message>
+    <message>
+        <source>Copy image to Clipboard</source>
+        <translation>Kopiera bilden till urklipp</translation>
+    </message>
+    <message>
+        <source>Upload image</source>
+        <translation>Ladda upp bilden</translation>
+    </message>
+    <message>
+        <source>Open image parent directory</source>
+        <translation>Öppna bildens överordnade mapp</translation>
+    </message>
+    <message>
+        <source>Save image</source>
+        <translation>Spara bilden</translation>
+    </message>
+    <message>
+        <source>Hide Main Window</source>
+        <translation>Dölj huvudfönstret</translation>
+    </message>
+    <message>
+        <source>Global</source>
+        <translation>Systemövergripande</translation>
+    </message>
+    <message>
+        <source>When enabled will make the shortcut
+available even when ksnip has no focus.</source>
+        <translation>Aktivering gör genvägen tillgänglig
+även när ksnip inte har fokus.</translation>
+    </message>
+</context>
+<context>
+    <name>ActionsSettings</name>
+    <message>
+        <source>Add</source>
+        <translation>Lägg till</translation>
+    </message>
+    <message>
+        <source>Actions Settings</source>
+        <translation>Åtgärdsinställningar</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Åtgärd</translation>
+    </message>
+</context>
+<context>
+    <name>AddWatermarkOperation</name>
+    <message>
+        <source>Watermark Image Required</source>
+        <translation>Vattenstämpelbild krävs</translation>
+    </message>
+    <message>
+        <source>Please add a Watermark Image via Options &gt; Settings &gt; Annotator &gt; Update</source>
+        <translation>Lägg till en vattenstämpel via Alternativ &gt; Inställningar &gt; Anteckningar &gt; Uppdatera</translation>
+    </message>
+</context>
+<context>
+    <name>AnnotationSettings</name>
+    <message>
+        <source>Smooth Painter Paths</source>
+        <translation>Utjämna ritade objekt</translation>
+    </message>
+    <message>
+        <source>When enabled smooths out pen and
+marker paths after finished drawing.</source>
+        <translation>Vid aktivering utjämnas penn- och
+markeringsstreck efter avslutad ritning.</translation>
+    </message>
+    <message>
+        <source>Smooth Factor</source>
+        <translation>Utjämningsfaktor</translation>
+    </message>
+    <message>
+        <source>Increasing the smooth factor will decrease
+precision for pen and marker but will
+make them more smooth.</source>
+        <translation>Ökad utjämningsfaktor minskar precisionen
+för penna och markör, men gör dem mjukare.</translation>
+    </message>
+    <message>
+        <source>Annotator Settings</source>
+        <translation>Anteckningsinställningar</translation>
+    </message>
+    <message>
+        <source>Remember annotation tool selection and load on startup</source>
+        <translation>Kom ihåg val av ritverktyg och läs in vid uppstart</translation>
+    </message>
+    <message>
+        <source>Switch to Select Tool after drawing Item</source>
+        <translation>Växla för att välja verktyg efter att ett objekt ritats</translation>
+    </message>
+    <message>
+        <source>Number Tool Seed change updates all Number Items</source>
+        <translation>Ändring i numreringsverktyget uppdaterar alla nummerposter</translation>
+    </message>
+    <message>
+        <source>Disabling this option causes changes of the number tool
+seed to affect only new items but not existing items.
+Disabling this option allows having duplicate numbers.</source>
+        <translation>Inaktivering av det här alternativet innebär att numreringsverktyget
+påverkar endast nya objekt men inte befintliga.
+Inaktivering låter dig använda dubblettnummer.</translation>
+    </message>
+    <message>
+        <source>Canvas Color</source>
+        <translation>Färg på arbetsytan</translation>
+    </message>
+    <message>
+        <source>Default Canvas background color for annotation area.
+Changing color affects only new annotation areas.</source>
+        <translation>Standardfärg på arbetsytan i anteckningsområdet.
+Ändring av färgen påverkar bara nya anteckningsområden.</translation>
+    </message>
+    <message>
+        <source>Select Item after drawing</source>
+        <translation>Markera objekt efter ritning</translation>
+    </message>
+    <message>
+        <source>With this option enabled the item gets selected after
+being created, allowing changing settings.</source>
+        <translation>Med det här alternativet aktiverat, markeras objektet efter
+att det skapats, vilket gör det möjligt att ändra inställningar.</translation>
+    </message>
+    <message>
+        <source>Show Controls Widget</source>
+        <translation>Visa kontrollwidget</translation>
+    </message>
+    <message>
+        <source>The Controls Widget contains the Undo/Redo,
+Crop, Scale, Rotate and Modify Canvas buttons.</source>
+        <translation>Kontrollwidgeten innehåller knappar för Ångra/Upprepa,
+Beskär, Skala, Rotera och Ändra arbetsytan.</translation>
+    </message>
+</context>
+<context>
+    <name>ApplicationSettings</name>
+    <message>
+        <source>Capture screenshot at startup with default mode</source>
+        <translation>Ta skärmklipp vid uppstart med standardläget</translation>
+    </message>
+    <message>
+        <source>Application Style</source>
+        <translation>Programstil</translation>
+    </message>
+    <message>
+        <source>Sets the application style which defines the look and feel of the GUI.
+Change requires ksnip restart to take effect.</source>
+        <translation>Anger programstilen, vilket definierar utseende och känsla i GUI.
+Ändringar tillämpas efter omstart av ksnip.</translation>
+    </message>
+    <message>
+        <source>Application Settings</source>
+        <translation>Programinställningar</translation>
+    </message>
+    <message>
+        <source>Automatically copy new captures to clipboard</source>
+        <translation>Kopiera automatiskt nya skärmklipp till urklipp</translation>
+    </message>
+    <message>
+        <source>Use Tabs</source>
+        <translation>Använd flikar</translation>
+    </message>
+    <message>
+        <source>Change requires restart.</source>
+        <translation>Ändring kräver omstart.</translation>
+    </message>
+    <message>
+        <source>Run ksnip as single instance</source>
+        <translation>Kör ksnip som enskild instans</translation>
+    </message>
+    <message>
+        <source>Hide Tabbar when only one Tab is used.</source>
+        <translation>Dölj flikfältet när endast en flik används.</translation>
+    </message>
+    <message>
+        <source>Enabling this option will allow only one ksnip instance to run,
+all other instances started after the first will pass its
+arguments to the first and close. Changing this option requires
+a new start of all instances.</source>
+        <translation>Om du aktiverar detta alternativ kan endast en ksnip-instans köras,
+alla instanser som startas efter den första, kommer att skicka
+sina argument vidare till den första och sedan avslutas.
+Om det här alternativet ändras måste alla öppna instanser startas om.</translation>
+    </message>
+    <message>
+        <source>Remember Main Window position on move and load on startup</source>
+        <translation>Kom ihåg huvudfönstrets position vid förflyttning och läs in vid programstart</translation>
+    </message>
+    <message>
+        <source>Auto hide Tabs</source>
+        <translation>Dölj flikar automatiskt</translation>
+    </message>
+    <message>
+        <source>Auto hide Docks</source>
+        <translation>Dölj dockor automatiskt</translation>
+    </message>
+    <message>
+        <source>On startup hide Toolbar and Annotation Settings.
+Docks visibility can be toggled with the Tab Key.</source>
+        <translation>Dölj verktygsfält och noteringsinställningar vid uppstart.
+Dockors synlighet kan växlas med Tab-tangenten.</translation>
+    </message>
+    <message>
+        <source>Auto resize to content</source>
+        <translation>Storleksändra automatiskt efter innehåll</translation>
+    </message>
+    <message>
+        <source>Automatically resize Main Window to fit content image.</source>
+        <translation>Ändra automatiskt storleken på huvudfönstret för att passa bilden.</translation>
+    </message>
+    <message>
+        <source>Enable Debugging</source>
+        <translation>Aktivera felsökning</translation>
+    </message>
+    <message>
+        <source>Enables debug output written to the console.
+Change requires ksnip restart to take effect.</source>
+        <translation>Aktiverar felsökningsutdata i konsolen.
+ksnip måste startas om för att ändringen skall tillämpas.</translation>
+    </message>
+    <message>
+        <source>Resizing to content is delay to allow the Window Manager to receive
+the new content. In case that the Main Windows is not adjusted correctly
+to the new content, increasing this delay might improve the behavior.</source>
+        <translation>Storleksändring till innehåll är en fördröjning för att fönsterhanteraren skall kunna ta emot
+det nya innehållet. Om huvudfönstret inte är korrekt inställt
+till det nya innehållet, kan en ökning av denna fördröjning förbättra beteendet.</translation>
+    </message>
+    <message>
+        <source>Resize delay</source>
+        <translation>Fördröjning av storleksändring</translation>
+    </message>
+    <message>
+        <source>Temp Directory</source>
+        <translation>Temp-katalog</translation>
+    </message>
+    <message>
+        <source>Temp directory used for storing temporary images that are
+going to be deleted after ksnip closes.</source>
+        <translation>Temp-katalog för att lagra tillfälliga bilder som
+kommer att raderas när ksnip stängs.</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Bläddra</translation>
+    </message>
+</context>
+<context>
+    <name>AuthorTab</name>
+    <message>
+        <source>Contributors:</source>
+        <translation>Medverkande:</translation>
+    </message>
+    <message>
+        <source>Spanish Translation</source>
+        <translation>Spansk översättning</translation>
+    </message>
+    <message>
+        <source>Dutch Translation</source>
+        <translation>Nederländsk översättning</translation>
+    </message>
+    <message>
+        <source>Russian Translation</source>
+        <translation>Rysk översättning</translation>
+    </message>
+    <message>
+        <source>Norwegian Bokmål Translation</source>
+        <translation>Norsk (Bokmål) översättning</translation>
+    </message>
+    <message>
+        <source>French Translation</source>
+        <translation>Fransk översättning</translation>
+    </message>
+    <message>
+        <source>Polish Translation</source>
+        <translation>Polsk översättning</translation>
+    </message>
+    <message>
+        <source>Snap &amp; Flatpak Support</source>
+        <translation>Snap- &amp; Flatpak-stöd</translation>
+    </message>
+    <message>
+        <source>The Authors:</source>
+        <translation>Upphovsmän:</translation>
+    </message>
+</context>
+<context>
+    <name>CanDiscardOperation</name>
+    <message>
+        <source>Warning - </source>
+        <translation>Varning! - </translation>
+    </message>
+    <message>
+        <source>The capture %1%2%3 has been modified.
+Do you want to save it?</source>
+        <translation>Klippet %1%2%3 har ändrats.
+Vill du spara det?</translation>
+    </message>
+</context>
+<context>
+    <name>CaptureModePicker</name>
+    <message>
+        <source>New</source>
+        <translation>Nytt</translation>
+    </message>
+    <message>
+        <source>Draw a rectangular area with your mouse</source>
+        <translation>Dra upp ett rektangulärt område med musen</translation>
+    </message>
+    <message>
+        <source>Capture full screen including all monitors</source>
+        <translation>Avbildar hela skärmen, samtliga skärmar inkluderade</translation>
+    </message>
+    <message>
+        <source>Capture screen where the mouse is located</source>
+        <translation>Avbildar skärmen där muspekaren befinner sig</translation>
+    </message>
+    <message>
+        <source>Capture window that currently has focus</source>
+        <translation>Avbildar det fönster som har fokus</translation>
+    </message>
+    <message>
+        <source>Capture that is currently under the mouse cursor</source>
+        <translation>Avbildar fönstret under muspekaren</translation>
+    </message>
+    <message>
+        <source>Capture a screenshot of the last selected rectangular area</source>
+        <translation>Tar ett skärmklipp av senast markerade rektangulära område</translation>
+    </message>
+    <message>
+        <source>Uses the screenshot Portal for taking screenshot</source>
+        <translation>Använder skärmklippsportalen för att ta skärmdump</translation>
+    </message>
+</context>
+<context>
+    <name>ContactTab</name>
+    <message>
+        <source>Community</source>
+        <translation>Gemenskap</translation>
+    </message>
+    <message>
+        <source>Bug Reports</source>
+        <translation>Felrapporter</translation>
+    </message>
+    <message>
+        <source>If you have general questions, ideas or just want to talk about ksnip,&lt;br/&gt;please join our %1 or our %2 server.</source>
+        <translation>Om du har allmänna frågor, idéer eller bara vill prata om ksnip,&lt;br/&gt;kan du ansluta till vår %1- eller %2-server.</translation>
+    </message>
+    <message>
+        <source>Please use %1 to report bugs.</source>
+        <translation>Använd %1 för att rapportera fel.</translation>
+    </message>
+</context>
+<context>
+    <name>CopyAsDataUriOperation</name>
+    <message>
+        <source>Failed to copy to clipboard</source>
+        <translation>Kunde inte kopiera till urklipp</translation>
+    </message>
+    <message>
+        <source>Failed to copy to clipboard as base64 encoded image.</source>
+        <translation>Kunde inte kopiera till urklipp som base64-kodad bild.</translation>
+    </message>
+    <message>
+        <source>Copied to clipboard</source>
+        <translation>Kopierat till urklipp</translation>
+    </message>
+    <message>
+        <source>Copied to clipboard as base64 encoded image.</source>
+        <translation>Kopierat till urklipp som base64-kodad bild.</translation>
+    </message>
+</context>
+<context>
+    <name>DeleteImageOperation</name>
+    <message>
+        <source>Delete Image</source>
+        <translation>Ta bort bild</translation>
+    </message>
+    <message>
+        <source>The item &apos;%1&apos; will be deleted.
+Do you want to continue?</source>
+        <translation>&quot;%1&quot; kommer att tas bort.
+Vill du fortsätta?</translation>
+    </message>
+</context>
+<context>
+    <name>DonateTab</name>
+    <message>
+        <source>Donations are always welcome</source>
+        <translation>Donationer är alltid välkomna</translation>
+    </message>
+    <message>
+        <source>Donation</source>
+        <translation>Donation</translation>
+    </message>
+    <message>
+        <source>ksnip is a non-profitable copyleft libre software project, and&lt;br/&gt;still has some costs that need to be covered,&lt;br/&gt;like domain costs or hardware costs for cross-platform support.</source>
+        <translation>ksnip är ett icke-vinstdrivande copyleft-projekt för fri programvara, och&lt;br/&gt;har fortfarande vissa kostnader som måste täckas,&lt;br/&gt;som domänkostnader eller hårdvarukostnader för plattformsoberoende stöd.</translation>
+    </message>
+    <message>
+        <source>If you want to help or just want to appreciate the work being done&lt;br/&gt;by treating developers to a beer or coffee, you can do that %1here%2.</source>
+        <translation>Om du vill hjälpa till eller bara uppskatta det arbete som görs&lt;br/&gt;genom att bjuda utvecklarna på en öl eller en kopp kaffe kan du göra det %1här%2.</translation>
+    </message>
+    <message>
+        <source>Become a GitHub Sponsor?</source>
+        <translation>Vill du bli en GitHub-sponsor?</translation>
+    </message>
+    <message>
+        <source>Also possible, %1here%2.</source>
+        <translation>Det är också möjligt, %1här%2.</translation>
+    </message>
+</context>
+<context>
+    <name>EmptyActionSettingTab</name>
+    <message>
+        <source>Add new actions by pressing the &apos;Add&apos; tab button.</source>
+        <translation>Lägg till nya åtgärder genom att trycka på &quot;Lägg till&quot;.</translation>
+    </message>
+</context>
+<context>
+    <name>EnumTranslator</name>
+    <message>
+        <source>Rectangular Area</source>
+        <translation>Rektangulärt område</translation>
+    </message>
+    <message>
+        <source>Last Rectangular Area</source>
+        <translation>Senaste rektangulära område</translation>
+    </message>
+    <message>
+        <source>Full Screen (All Monitors)</source>
+        <translation>Helskärm (Alla skärmar)</translation>
+    </message>
+    <message>
+        <source>Current Screen</source>
+        <translation>Aktuell skärm</translation>
+    </message>
+    <message>
+        <source>Active Window</source>
+        <translation>Aktivt fönster</translation>
+    </message>
+    <message>
+        <source>Window Under Cursor</source>
+        <translation>Fönster under muspekaren</translation>
+    </message>
+    <message>
+        <source>Screenshot Portal</source>
+        <translation>Skärmklippsportal</translation>
+    </message>
+</context>
+<context>
+    <name>FtpUploaderSettings</name>
+    <message>
+        <source>Force anonymous upload.</source>
+        <translation>Tvinga fram anonym uppladdning.</translation>
+    </message>
+    <message>
+        <source>Url</source>
+        <translation>URL</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Användarnamn</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Lösenord</translation>
+    </message>
+    <message>
+        <source>FTP Uploader</source>
+        <translation>FTP-uppladdare</translation>
+    </message>
+</context>
+<context>
+    <name>HandleUploadResultOperation</name>
+    <message>
+        <source>Upload Successful</source>
+        <translation>Uppladdning slutförd</translation>
+    </message>
+    <message>
+        <source>Unable to save temporary image for upload.</source>
+        <translation>Kan inte spara temporär bild för uppladdning.</translation>
+    </message>
+    <message>
+        <source>Unable to start process, check path and permissions.</source>
+        <translation>Det gick inte att starta processen, kontrollera sökväg och behörigheter.</translation>
+    </message>
+    <message>
+        <source>Process crashed</source>
+        <translation>Processen kraschade</translation>
+    </message>
+    <message>
+        <source>Process timed out.</source>
+        <translation>Tidsgränsen för processen överskreds.</translation>
+    </message>
+    <message>
+        <source>Process read error.</source>
+        <translation>Läsfel i processen.</translation>
+    </message>
+    <message>
+        <source>Process write error.</source>
+        <translation>Skrivfel i processen.</translation>
+    </message>
+    <message>
+        <source>Web error, check console output.</source>
+        <translation>Webbfel, kontrollera utdata i konsolen.</translation>
+    </message>
+    <message>
+        <source>Upload Failed</source>
+        <translation>Uppladdning misslyckades</translation>
+    </message>
+    <message>
+        <source>Script wrote to StdErr.</source>
+        <translation>Skript skrev till StdErr.</translation>
+    </message>
+    <message>
+        <source>FTP Upload finished successfully.</source>
+        <translation>FTP-uppladdningen har slutförts.</translation>
+    </message>
+    <message>
+        <source>Unknown error.</source>
+        <translation>Okänt fel.</translation>
+    </message>
+    <message>
+        <source>Connection Error.</source>
+        <translation>Anslutningsfel.</translation>
+    </message>
+    <message>
+        <source>Permission Error.</source>
+        <translation>Behörighetsfel.</translation>
+    </message>
+    <message>
+        <source>Upload script %1  finished successfully.</source>
+        <translation>Uppladdningsskriptet %1 har slutförts.</translation>
+    </message>
+    <message>
+        <source>Uploaded to %1</source>
+        <translation>Uppladdat till %1</translation>
+    </message>
+</context>
+<context>
+    <name>HotKeySettings</name>
+    <message>
+        <source>Enable Global HotKeys</source>
+        <translation>Aktivera systemövergripande snabbtangenter</translation>
+    </message>
+    <message>
+        <source>Capture Rect Area</source>
+        <translation>Avbilda rektangulärt område</translation>
+    </message>
+    <message>
+        <source>Capture Full Screen</source>
+        <translation>Avbilda helskärm</translation>
+    </message>
+    <message>
+        <source>Capture current Screen</source>
+        <translation>Avbilda aktuell skärm</translation>
+    </message>
+    <message>
+        <source>Capture active Window</source>
+        <translation>Avbilda aktivt fönster</translation>
+    </message>
+    <message>
+        <source>Capture Window under Cursor</source>
+        <translation>Avbilda fönster under muspekare</translation>
+    </message>
+    <message>
+        <source>Global HotKeys</source>
+        <translation>Systemövergripande snabbtangenter</translation>
+    </message>
+    <message>
+        <source>Capture Last Rect Area</source>
+        <translation>Avbilda senaste rektangulära område</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Rensa</translation>
+    </message>
+    <message>
+        <source>Capture using Portal</source>
+        <translation>Klipp ut med hjälp av Portal</translation>
+    </message>
+    <message>
+        <source>HotKeys are currently supported only for Windows and X11.
+Disabling this option makes also the action shortcuts ksnip only.</source>
+        <translation>Snabbtangenter stöds för närvarande endast av Windows och X11.
+Inaktivering av detta alternativ gör också åtgärdsgenvägar till endast ksnip.</translation>
+    </message>
+</context>
+<context>
+    <name>ImageGrabberSettings</name>
+    <message>
+        <source>Capture mouse cursor on screenshot</source>
+        <translation>Ta med muspekaren i skärmklipp</translation>
+    </message>
+    <message>
+        <source>Should mouse cursor be visible on
+screenshots.</source>
+        <translation>Om muspekaren skall vara synlig i
+skärmklipp.</translation>
+    </message>
+    <message>
+        <source>Image Grabber</source>
+        <translation>Områdesklipp</translation>
+    </message>
+    <message>
+        <source>Generic Wayland implementations that use
+XDG-DESKTOP-PORTAL handle screen scaling
+differently. Enabling this option will
+determine the current screen scaling and
+apply that to the screenshot in ksnip.</source>
+        <translation>Inbyggda Wayland-implementeringar som använder
+XDG-DESKTOP-PORTAL hanterar skärmskalning
+olikt. Aktivering av detta alternativ kommer
+avgöra aktuell skärmskalning och
+tillämpa det på skärmklipp i ksnip.</translation>
+    </message>
+    <message>
+        <source>GNOME and KDE Plasma support their own Wayland
+and the Generic XDG-DESKTOP-PORTAL screenshots.
+Enabling this option will force KDE Plasma and
+GNOME to use the XDG-DESKTOP-PORTAL screenshots.
+Change in this option require a ksnip restart.</source>
+        <translation>GNOME och KDE Plasma stödjer det egna Wayland
+och inbyggda XDG-DESKTOP-PORTAL-skärmklipp.
+Om alternativet aktiveras kommer KDE Plasma och
+GNOME att använda XDG-DESKTOP-PORTAL-skärmklipp.
+Ändring i det här alternativet kräveratt ksnip startas om.</translation>
+    </message>
+    <message>
+        <source>Show Main Window after capturing screenshot</source>
+        <translation>Visa huvudfönstret efter utfört skärmklipp</translation>
+    </message>
+    <message>
+        <source>Hide Main Window during screenshot</source>
+        <translation>Dölj huvudfönstret under skärmklipp</translation>
+    </message>
+    <message>
+        <source>Hide Main Window when capturing a new screenshot.</source>
+        <translation>Dölj huvudfönstret när du tar ett nytt skärmklipp.</translation>
+    </message>
+    <message>
+        <source>Show Main Window after capturing a new screenshot
+when the Main Window was hidden or minimize.</source>
+        <translation>Visa huvudfönstret efter att ha tagit ett nytt skärmklipp,
+när huvudfönstret var dolt eller minimerat.</translation>
+    </message>
+    <message>
+        <source>Force Generic Wayland (xdg-desktop-portal) Screenshot</source>
+        <translation>Tvinga generisk Wayland (xdg-desktop-portal) Skärmdump</translation>
+    </message>
+    <message>
+        <source>Scale Generic Wayland (xdg-desktop-portal) Screenshots</source>
+        <translation>Skala Generic Wayland (xdg-desktop-portal) Skärmdumpar</translation>
+    </message>
+    <message>
+        <source>Implicit capture delay</source>
+        <translation>Implicit klippfördröjning</translation>
+    </message>
+    <message>
+        <source>This delay is used when no delay was selected in
+the UI, it allows ksnip to hide before taking
+a screenshot. This value is not applied when
+ksnip was already minimized. Reducing this value
+can have the effect that ksnip&apos;s main window is
+visible on the screenshot.</source>
+        <translation>Denna fördröjning används när ingen fördröjning har
+valts i UI, det gör att ksnip kan döljas innan det tar
+ett skärmklipp. Det här värdet används inte när ksnip
+redan är minimerad. Att minska det här värdet kan få
+effekten att ksnips huvudfönster syns på skärmklippet.</translation>
+    </message>
+</context>
+<context>
+    <name>ImgurHistoryDialog</name>
+    <message>
+        <source>Imgur History</source>
+        <translation>Imgur-historik</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Stäng</translation>
+    </message>
+    <message>
+        <source>Time Stamp</source>
+        <translation>Tidsstämpel</translation>
+    </message>
+    <message>
+        <source>Link</source>
+        <translation>Länk</translation>
+    </message>
+    <message>
+        <source>Delete Link</source>
+        <translation>Ta bort länk</translation>
+    </message>
+</context>
+<context>
+    <name>ImgurUploader</name>
+    <message>
+        <source>Upload to imgur.com finished!</source>
+        <translation>Uppladdning till imgur.com slutförd!</translation>
+    </message>
+    <message>
+        <source>Received new token, trying upload again…</source>
+        <translation>Tog emot ny token. Försöker ladda upp igen…</translation>
+    </message>
+    <message>
+        <source>Imgur token has expired, requesting new token…</source>
+        <translation>Imgur-token har upphört att gälla. Ber om ny token…</translation>
+    </message>
+</context>
+<context>
+    <name>ImgurUploaderSettings</name>
+    <message>
+        <source>Force anonymous upload</source>
+        <translation>Tvinga fram anonym uppladdning</translation>
+    </message>
+    <message>
+        <source>Always copy Imgur link to clipboard</source>
+        <translation>Kopiera alltid Imgur-länk till urklipp</translation>
+    </message>
+    <message>
+        <source>Client ID</source>
+        <translation>Klient-ID</translation>
+    </message>
+    <message>
+        <source>Client Secret</source>
+        <translation>Klienthemlighet</translation>
+    </message>
+    <message>
+        <source>PIN</source>
+        <translation>PIN</translation>
+    </message>
+    <message>
+        <source>Enter imgur Pin which will be exchanged for a token.</source>
+        <translation>Ange Imgur PIN-kod, vilken byts mot en token.</translation>
+    </message>
+    <message>
+        <source>Get PIN</source>
+        <translation>Hämta PIN</translation>
+    </message>
+    <message>
+        <source>Get Token</source>
+        <translation>Hämta token</translation>
+    </message>
+    <message>
+        <source>Imgur History</source>
+        <translation>Imgur-historik</translation>
+    </message>
+    <message>
+        <source>Imgur Uploader</source>
+        <translation>Imgur-uppladdare</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Användarnamn</translation>
+    </message>
+    <message>
+        <source>Waiting for imgur.com…</source>
+        <translation>Väntar på imgur.com…</translation>
+    </message>
+    <message>
+        <source>Imgur.com token successfully updated.</source>
+        <translation>Imgur.com-token uppdaterades.</translation>
+    </message>
+    <message>
+        <source>Imgur.com token update error.</source>
+        <translation>Imgur.com-token uppdateringsfel.</translation>
+    </message>
+    <message>
+        <source>After uploading open Imgur link in default browser</source>
+        <translation>Öppna Imgur-länken i standardwebbläsare efter uppladdning</translation>
+    </message>
+    <message>
+        <source>Link directly to image</source>
+        <translation>Länka direkt till bilden</translation>
+    </message>
+    <message>
+        <source>Base Url:</source>
+        <translation>Grundläggande URL:</translation>
+    </message>
+    <message>
+        <source>Base url that will be used for communication with Imgur.
+Changing requires restart.</source>
+        <translation>Grundläggande URL som används för kommunikation med Imgur.
+Ändring kräver omstart.</translation>
+    </message>
+    <message>
+        <source>Clear Token</source>
+        <translation>Rensa token</translation>
+    </message>
+    <message>
+        <source>Upload title:</source>
+        <translation>Uppladdningsnamn:</translation>
+    </message>
+    <message>
+        <source>Upload description:</source>
+        <translation>Uppladdningsbeskrivning:</translation>
+    </message>
+</context>
+<context>
+    <name>LoadImageFromFileOperation</name>
+    <message>
+        <source>Unable to open image</source>
+        <translation>Kan inte öppna bilden</translation>
+    </message>
+    <message>
+        <source>Unable to open image from path %1</source>
+        <translation>Kan inte öppna bild från sökvägen %1</translation>
+    </message>
+</context>
+<context>
+    <name>MainToolBar</name>
+    <message>
+        <source>New</source>
+        <translation>Nytt</translation>
+    </message>
+    <message>
+        <source>Delay in seconds between triggering
+and capturing screenshot.</source>
+        <translation>Fördröjning i sekunder mellan utlösning
+och själva skärmklippet.</translation>
+    </message>
+    <message>
+        <source>s</source>
+        <extracomment>The small letter s stands for seconds.</extracomment>
+        <translation>s</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Spara</translation>
+    </message>
+    <message>
+        <source>Save Screen Capture to file system</source>
+        <translation>Spara skärmklippet</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopiera</translation>
+    </message>
+    <message>
+        <source>Copy Screen Capture to clipboard</source>
+        <translation>Kopiera skärmklippet till urklipp</translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation>Verktyg</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation>Ångra</translation>
+    </message>
+    <message>
+        <source>Redo</source>
+        <translation>Upprepa</translation>
+    </message>
+    <message>
+        <source>Crop</source>
+        <translation>Beskär</translation>
+    </message>
+    <message>
+        <source>Crop Screen Capture</source>
+        <translation>Beskär skärmklippet</translation>
+    </message>
+</context>
+<context>
+    <name>MainWindow</name>
+    <message>
+        <source>Unsaved</source>
+        <translation>Osparad</translation>
+    </message>
+    <message>
+        <source>Upload</source>
+        <translation>Ladda upp</translation>
+    </message>
+    <message>
+        <source>Print</source>
+        <translation>Skriv ut</translation>
+    </message>
+    <message>
+        <source>Opens printer dialog and provide option to print image</source>
+        <translation>Öppnar en utskriftsdialog visar alternativen för utskrift</translation>
+    </message>
+    <message>
+        <source>Print Preview</source>
+        <translation>Förhandsgranskning</translation>
+    </message>
+    <message>
+        <source>Opens Print Preview dialog where the image orientation can be changed</source>
+        <translation>Öppnar en förhandsvisning av utskriften där bildorienteringen kan ändras</translation>
+    </message>
+    <message>
+        <source>Scale</source>
+        <translation>Skala</translation>
+    </message>
+    <message>
+        <source>Quit</source>
+        <translation>Avsluta</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Inställningar</translation>
+    </message>
+    <message>
+        <source>&amp;About</source>
+        <translation>&amp;Om</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Öppna</translation>
+    </message>
+    <message>
+        <source>&amp;Edit</source>
+        <translation>&amp;Redigera</translation>
+    </message>
+    <message>
+        <source>&amp;Options</source>
+        <translation>A&amp;lternativ</translation>
+    </message>
+    <message>
+        <source>&amp;Help</source>
+        <translation>&amp;Hjälp</translation>
+    </message>
+    <message>
+        <source>Add Watermark</source>
+        <translation>Lägg till vattenstämpel</translation>
+    </message>
+    <message>
+        <source>Add Watermark to captured image. Multiple watermarks can be added.</source>
+        <translation>Lägg en vattenstämpel på skärmklippet. Flera vattenstämplar kan infogas.</translation>
+    </message>
+    <message>
+        <source>&amp;File</source>
+        <translation>&amp;Arkiv</translation>
+    </message>
+    <message>
+        <source>Unable to show image</source>
+        <translation>Kan inte visa bilden</translation>
+    </message>
+    <message>
+        <source>Save As...</source>
+        <translation>Spara som...</translation>
+    </message>
+    <message>
+        <source>Paste</source>
+        <translation>Klistra in</translation>
+    </message>
+    <message>
+        <source>Paste Embedded</source>
+        <translation>Klistra in inbäddat</translation>
+    </message>
+    <message>
+        <source>Pin</source>
+        <translation>Fäst</translation>
+    </message>
+    <message>
+        <source>Pin screenshot to foreground in frameless window</source>
+        <translation>Fäst skärmklipp i förgrunden i ramlöst fönster</translation>
+    </message>
+    <message>
+        <source>No image provided but one was expected.</source>
+        <translation>Ingen bild tillgänglig, men en var förväntad.</translation>
+    </message>
+    <message>
+        <source>Copy Path</source>
+        <translation>Kopiera sökväg</translation>
+    </message>
+    <message>
+        <source>Open Directory</source>
+        <translation>Öppna mapp</translation>
+    </message>
+    <message>
+        <source>&amp;View</source>
+        <translation>&amp;Visa</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Ta bort</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Byt namn</translation>
+    </message>
+    <message>
+        <source>Open Images</source>
+        <translation>Öppna bilder</translation>
+    </message>
+    <message>
+        <source>Show Docks</source>
+        <translation>Visa dockor</translation>
+    </message>
+    <message>
+        <source>Hide Docks</source>
+        <translation>Dölj dockor</translation>
+    </message>
+    <message>
+        <source>Copy as data URI</source>
+        <translation>Kopiera som data-URI</translation>
+    </message>
+    <message>
+        <source>Open &amp;Recent</source>
+        <translation>Öppna &amp;tidigare</translation>
+    </message>
+    <message>
+        <source>Modify Canvas</source>
+        <translation>Ändra arbetsyta</translation>
+    </message>
+    <message>
+        <source>Upload triggerCapture to external source</source>
+        <translation>Ladda upp skärmklipp till extern källa</translation>
+    </message>
+    <message>
+        <source>Copy triggerCapture to system clipboard</source>
+        <translation>Kopiera skärmklipp till systemets urklipp</translation>
+    </message>
+    <message>
+        <source>Scale Image</source>
+        <translation>Skala bild</translation>
+    </message>
+    <message>
+        <source>Rotate</source>
+        <translation>Rotera</translation>
+    </message>
+    <message>
+        <source>Rotate Image</source>
+        <translation>Rotera bild</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Åtgärder</translation>
+    </message>
+    <message>
+        <source>Image Files</source>
+        <translation>Bildfiler</translation>
+    </message>
+    <message>
+        <source>Save All</source>
+        <translation>Spara alla</translation>
+    </message>
+    <message>
+        <source>Close Window</source>
+        <translation>Stäng fönster</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation>Klipp ut</translation>
+    </message>
+    <message>
+        <source>OCR</source>
+        <translation>OCR</translation>
+    </message>
+</context>
+<context>
+    <name>MultiCaptureHandler</name>
+    <message>
+        <source>Save</source>
+        <translation>Spara</translation>
+    </message>
+    <message>
+        <source>Save As</source>
+        <translation>Spara som</translation>
+    </message>
+    <message>
+        <source>Open Directory</source>
+        <translation>Öppna mapp</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopiera</translation>
+    </message>
+    <message>
+        <source>Copy Path</source>
+        <translation>Kopiera sökväg</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Ta bort</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Byt namn</translation>
+    </message>
+    <message>
+        <source>Save All</source>
+        <translation>Spara alla</translation>
+    </message>
+</context>
+<context>
+    <name>NewCaptureNameProvider</name>
+    <message>
+        <source>Capture</source>
+        <translation>Klipp</translation>
+    </message>
+</context>
+<context>
+    <name>OcrWindowCreator</name>
+    <message>
+        <source>OCR Window %1</source>
+        <translation>OCR-fönster %1</translation>
+    </message>
+</context>
+<context>
+    <name>PinWindow</name>
+    <message>
+        <source>Close</source>
+        <translation>Stäng</translation>
+    </message>
+    <message>
+        <source>Close Other</source>
+        <translation>Stäng övriga</translation>
+    </message>
+    <message>
+        <source>Close All</source>
+        <translation>Stäng alla</translation>
+    </message>
+</context>
+<context>
+    <name>PinWindowCreator</name>
+    <message>
+        <source>OCR Window %1</source>
+        <translation>OCR-fönster %1</translation>
+    </message>
+</context>
+<context>
+    <name>PluginsSettings</name>
+    <message>
+        <source>Search Path</source>
+        <translation>Sökväg</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>The directory where the plugins are located.</source>
+        <translation>Katalog där insticksprogrammen finns.</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Bläddra</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Namn</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Detect</source>
+        <translation>Identifiera</translation>
+    </message>
+    <message>
+        <source>Plugin Settings</source>
+        <translation>Insticksinställningar</translation>
+    </message>
+    <message>
+        <source>Plugin location</source>
+        <translation>Plats för insticksprogrammet</translation>
+    </message>
+</context>
+<context>
+    <name>ProcessIndicator</name>
+    <message>
+        <source>Processing</source>
+        <translation>Bearbetar</translation>
+    </message>
+</context>
+<context>
+    <name>RenameOperation</name>
+    <message>
+        <source>Image Renamed</source>
+        <translation>Bilden har bytt namn</translation>
+    </message>
+    <message>
+        <source>Image Rename Failed</source>
+        <translation>Kunde inte byta namn</translation>
+    </message>
+    <message>
+        <source>Rename image</source>
+        <translation>Byt namn på bilden</translation>
+    </message>
+    <message>
+        <source>New filename:</source>
+        <translation>Nytt filnamn:</translation>
+    </message>
+    <message>
+        <source>Successfully renamed image to %1</source>
+        <translation>Bildnamnet har ändrats till %1</translation>
+    </message>
+    <message>
+        <source>Failed to rename image to %1</source>
+        <translation>Kunde inte att byta namn på bilden till %1</translation>
+    </message>
+</context>
+<context>
+    <name>SaveOperation</name>
+    <message>
+        <source>Save As</source>
+        <translation>Spara som</translation>
+    </message>
+    <message>
+        <source>All Files</source>
+        <translation>Alla filer</translation>
+    </message>
+    <message>
+        <source>Image Saved</source>
+        <translation>Bild sparad</translation>
+    </message>
+    <message>
+        <source>Saving Image Failed</source>
+        <translation>Kunde inte spara bilden</translation>
+    </message>
+    <message>
+        <source>Image Files</source>
+        <translation>Bildfiler</translation>
+    </message>
+    <message>
+        <source>Saved to %1</source>
+        <translation>Sparat till %1</translation>
+    </message>
+    <message>
+        <source>Failed to save image to %1</source>
+        <translation>Kunde inte att spara bilden till %1</translation>
+    </message>
+</context>
+<context>
+    <name>SaverSettings</name>
+    <message>
+        <source>Automatically save new captures to default location</source>
+        <translation>Spara automatiskt nya skärmklipp till standardplatsen</translation>
+    </message>
+    <message>
+        <source>Prompt to save before discarding unsaved changes</source>
+        <translation>Fråga om att spara, innan osparade ändringar kasseras</translation>
+    </message>
+    <message>
+        <source>Remember last Save Directory</source>
+        <translation>Kom ihåg senaste lagringsmappen</translation>
+    </message>
+    <message>
+        <source>When enabled will overwrite the save directory stored in settings
+with the latest save directory, for every save.</source>
+        <translation>Vid aktivering kommer den i inställningarna sparade lagringsmappen
+att skrivas över med senaste lagringsmappen, varje gång något sparas.</translation>
+    </message>
+    <message>
+        <source>Capture save location and filename</source>
+        <translation>Klipplagringsplats och filnamn</translation>
+    </message>
+    <message>
+        <source>Supported Formats are JPG, PNG and BMP. If no format provided, PNG will be used as default.
+Filename can contain following wildcards:
+- $Y, $M, $D for date, $h, $m, $s for time, or $T for time in hhmmss format.
+- Multiple consecutive # for counter. #### will result in 0001, next capture would be 0002.</source>
+        <translation>Formaten som stöds är JPG, PNG och BMP. Om inget format anges används PNG som standard.
+Filnamn kan innehålla följande jokertecken: 
+- $Y, $M, $D för datum, $h, $m, $s för tid eller $T för tid i hhmmss-format.
+- Flera på varandra följande # för räknare. #### kommer att resultera i 0001, nästa klipp blir 0002.</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Bläddra</translation>
+    </message>
+    <message>
+        <source>Saver Settings</source>
+        <translation>Inställningar för lagring</translation>
+    </message>
+    <message>
+        <source>Capture save location</source>
+        <translation>Klipplagringsplats</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>Factor</source>
+        <translation>Faktor</translation>
+    </message>
+    <message>
+        <source>Save Quality</source>
+        <translation>Lagringskvalitet</translation>
+    </message>
+    <message>
+        <source>Specify 0 to obtain small compressed files, 100 for large uncompressed files.
+Not all image formats support the full range, JPEG does.</source>
+        <translation>Ange 0 för att erhålla små komprimerade filer, 100 för stora okomprimerade filer.
+Alla bildformat stödjer inte hela intervallet, det gör JEPG.</translation>
+    </message>
+    <message>
+        <source>Overwrite file with same name</source>
+        <translation>Skriv över filen med samma namn</translation>
+    </message>
+</context>
+<context>
+    <name>ScriptUploaderSettings</name>
+    <message>
+        <source>Copy script output to clipboard</source>
+        <translation>Kopiera skriptutdata till urklipp</translation>
+    </message>
+    <message>
+        <source>Script:</source>
+        <translation>Skript:</translation>
+    </message>
+    <message>
+        <source>Path to script that will be called for uploading. During upload the script will be called
+with the path to a temporary png file as a single argument.</source>
+        <translation>Sökväg till det skript som kommer att anropas för uppladdning. Under uppladdningen
+kommer skriptet att anropas med sökvägen till en temporär png-fil som enskilt argument.</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation>Bläddra</translation>
+    </message>
+    <message>
+        <source>Script Uploader</source>
+        <translation>Uppladdare för skript</translation>
+    </message>
+    <message>
+        <source>Select Upload Script</source>
+        <translation>Välj uppladdningsskript</translation>
+    </message>
+    <message>
+        <source>Stop when upload script writes to StdErr</source>
+        <translation>Stoppa när uppladdningsskript skriver till StdErr</translation>
+    </message>
+    <message>
+        <source>Marks the upload as failed when script writes to StdErr.
+Without this setting errors in the script will be unnoticed.</source>
+        <translation>Markerar uppladdning som misslyckad när skript skriver till StdErr.
+Utan den här inställningen visas inga fel i skriptet.</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Filter:</translation>
+    </message>
+    <message>
+        <source>RegEx Expression. Only copy to clipboard what matches the RegEx Expression.
+When omitted, everything is copied.</source>
+        <translation>RegEx-uttryck. Kopiera endast till urklipp, vad som matchar RegEx-uttrycket.
+När detta utelämnas kopieras allt.</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialog</name>
+    <message>
+        <source>Settings</source>
+        <translation>Inställningar</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>Image Grabber</source>
+        <translation>Klippverktyg</translation>
+    </message>
+    <message>
+        <source>Imgur Uploader</source>
+        <translation>Imgur-uppladdare</translation>
+    </message>
+    <message>
+        <source>Application</source>
+        <translation>Program</translation>
+    </message>
+    <message>
+        <source>Annotator</source>
+        <translation>Ritverktyg</translation>
+    </message>
+    <message>
+        <source>HotKeys</source>
+        <translation>Snabbtangenter</translation>
+    </message>
+    <message>
+        <source>Uploader</source>
+        <translation>Uppladdare</translation>
+    </message>
+    <message>
+        <source>Script Uploader</source>
+        <translation>Uppladdare för skript</translation>
+    </message>
+    <message>
+        <source>Saver</source>
+        <translation>Lagring</translation>
+    </message>
+    <message>
+        <source>Stickers</source>
+        <translation>Dekaler</translation>
+    </message>
+    <message>
+        <source>Snipping Area</source>
+        <translation>Klippområde</translation>
+    </message>
+    <message>
+        <source>Tray Icon</source>
+        <translation>Systemfältsikon</translation>
+    </message>
+    <message>
+        <source>Watermark</source>
+        <translation>Vattenstämpel</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Åtgärder</translation>
+    </message>
+    <message>
+        <source>FTP Uploader</source>
+        <translation>FTP-uppladdare</translation>
+    </message>
+    <message>
+        <source>Plugins</source>
+        <translation>Insticksprogram</translation>
+    </message>
+    <message>
+        <source>Search Settings...</source>
+        <translation>Sökinställningar...</translation>
+    </message>
+</context>
+<context>
+    <name>SnippingAreaResizerInfoText</name>
+    <message>
+        <source>Resize selected rect using the handles or move it by dragging the selection.</source>
+        <translation>Ändra storlek på markerad rektangel med hjälp av handtagen eller flytta den genom att dra markeringen.</translation>
+    </message>
+    <message>
+        <source>Use arrow keys to move the selection.</source>
+        <translation>Använd piltangenter för att flytta markeringen.</translation>
+    </message>
+    <message>
+        <source>Use arrow keys while pressing CTRL to move top left handle.</source>
+        <translation>Använd CTRL+piltangenter för att flytta handtaget i vänster överkant.</translation>
+    </message>
+    <message>
+        <source>Use arrow keys while pressing ALT to move bottom right handle.</source>
+        <translation>Använd ALT+piltangenter för att flytta handtaget i höger underkant.</translation>
+    </message>
+    <message>
+        <source>This message can be disabled via settings.</source>
+        <translation>Detta meddelande kan inaktiveras i inställningarna.</translation>
+    </message>
+    <message>
+        <source>Confirm selection by pressing ENTER/RETURN or mouse double-click anywhere.</source>
+        <translation>Bekräfta valet genom att trycka på ENTER/RETUR eller dubbelklicka med musen någonstans.</translation>
+    </message>
+    <message>
+        <source>Abort by pressing ESC.</source>
+        <translation>Avbryt genom att trycka ESC.</translation>
+    </message>
+</context>
+<context>
+    <name>SnippingAreaSelectorInfoText</name>
+    <message>
+        <source>Click and Drag to select a rectangular area or press ESC to quit.</source>
+        <translation>Klicka och dra för att markera ett rektangulärt område eller tryck ESC för att avsluta.</translation>
+    </message>
+    <message>
+        <source>Hold CTRL pressed to resize selection after selecting.</source>
+        <translation>Håll CTRL nedtryckt för att ändra storlek på markeringen.</translation>
+    </message>
+    <message>
+        <source>Hold CTRL pressed to prevent resizing after selecting.</source>
+        <translation>Håll CTRL nedtryckt för att förhindra storlekändring efter markering.</translation>
+    </message>
+    <message>
+        <source>Operation will be canceled after 60 sec when no selection made.</source>
+        <translation>Åtgärden avbryts efter 60 sekunder, om ingen markering gjorts.</translation>
+    </message>
+    <message>
+        <source>This message can be disabled via settings.</source>
+        <translation>Detta meddelande kan inaktiveras i inställningarna.</translation>
+    </message>
+</context>
+<context>
+    <name>SnippingAreaSettings</name>
+    <message>
+        <source>Freeze Image while snipping</source>
+        <translation>Frys bilden under klipp</translation>
+    </message>
+    <message>
+        <source>When enabled will freeze the background while
+selecting a rectangular region. It also changes
+the behavior of delayed screenshots, with this
+option enabled the delay happens before the
+snipping area is shown and with the option disabled
+the delay happens after the snipping area is shown.
+This feature is always disabled for Wayland and always
+enabled for MacOs.</source>
+        <translation>Vid aktivering fryses bakgrunden medan ett rektangulärt
+område markeras. Det ändrar också beteendet för
+fördröjt skärmklipp. Med detta alternativ aktiverat,
+sker fördröjningen innan klippområdet visas och med
+alternativet avaktiverat, sker fördröjningen efter
+klippområdet visas.
+Denna funktion är alltid inaktiverad för Wayland och
+alltid aktiverad för MacOS.</translation>
+    </message>
+    <message>
+        <source>Show magnifying glass on snipping area</source>
+        <translation>Visa förstoringsglas på klippområde</translation>
+    </message>
+    <message>
+        <source>Show a magnifying glass which zooms into
+the background image. This option only works
+with &apos;Freeze Image while snipping&apos; enabled.</source>
+        <translation>Visa ett förstoringsglas som zoomar in i bakgrundsbilden.
+Detta alternativ fungerar endast när
+&quot;Frys bilden under klipp&quot; är aktiverat.</translation>
+    </message>
+    <message>
+        <source>Show Snipping Area rulers</source>
+        <translation>Visa linjaler på klippområdet</translation>
+    </message>
+    <message>
+        <source>Horizontal and vertical lines going from
+desktop edges to cursor on snipping area.</source>
+        <translation>Horisontella och vertikala linjer går från
+skrivbordskanten till markören i klippområdet.</translation>
+    </message>
+    <message>
+        <source>Show Snipping Area position and size info</source>
+        <translation>Visa klippområdesplacering och storleksinformation</translation>
+    </message>
+    <message>
+        <source>When left mouse button is not pressed the position
+is shown, when the mouse button is pressed,
+the size of the select area is shown left
+and above from the captured area.</source>
+        <translation>När vänster musknapp inte hålls ner, visas
+positionen. När musknappen hålls ner, visas
+storleken på markerat område till vänster
+och över klippområdet.</translation>
+    </message>
+    <message>
+        <source>Allow resizing rect area selection by default</source>
+        <translation>Tillåt storleksändring av rektangelområde som standard</translation>
+    </message>
+    <message>
+        <source>When enabled will, after selecting a rect
+area, allow resizing the selection. When
+done resizing the selection can be confirmed
+by pressing return.</source>
+        <translation>Vid aktivering kommer en rektangulär
+områdesmarkering att kunna storleksändras.
+När storleksändringen slutförts kan den
+tillämpas genom att trycka Retur.</translation>
+    </message>
+    <message>
+        <source>Show Snipping Area info text</source>
+        <translation>Visa informationstext för klippområde</translation>
+    </message>
+    <message>
+        <source>Snipping Area cursor color</source>
+        <translation>Färg på klippområdesmarkören</translation>
+    </message>
+    <message>
+        <source>Sets the color of the snipping area cursor.</source>
+        <translation>Anger färgen på markören för klippområdet.</translation>
+    </message>
+    <message>
+        <source>Snipping Area cursor thickness</source>
+        <translation>Tjocklek på klippområdesmarkören</translation>
+    </message>
+    <message>
+        <source>Sets the thickness of the snipping area cursor.</source>
+        <translation>Anger tjockleken på klippområdets markör.</translation>
+    </message>
+    <message>
+        <source>Snipping Area</source>
+        <translation>Klippområde</translation>
+    </message>
+    <message>
+        <source>Snipping Area adorner color</source>
+        <translation>Klippområdets prydnadsfärg</translation>
+    </message>
+    <message>
+        <source>Sets the color of all adorner elements
+on the snipping area.</source>
+        <translation>Ställer in färgen på alla prydnadselement
+i klippområdet.</translation>
+    </message>
+    <message>
+        <source>Snipping Area Transparency</source>
+        <translation>Klippområdets transparens</translation>
+    </message>
+    <message>
+        <source>Alpha for not selected region on snipping area.
+Smaller number is more transparent.</source>
+        <translation>Alfa för icke markerad region på klippområdet.
+Lägre siffra är mer transparens.</translation>
+    </message>
+    <message>
+        <source>Enable Snipping Area offset</source>
+        <translation>Aktivera förskjutning av klippområde</translation>
+    </message>
+    <message>
+        <source>When enabled will apply the configured
+offset to the Snipping Area position which
+is required when the position is not
+correctly calculated. This is sometimes
+required with screen scaling enabled.</source>
+        <translation>Vid aktivewring tillämpas den konfigurerade
+förskjutning till positionen för klippområdet som
+krävs när positionen inte är korrekt beräknad.
+Detta krävs ibland när skärmskalning är aktiverad.</translation>
+    </message>
+    <message>
+        <source>X</source>
+        <translation>X</translation>
+    </message>
+    <message>
+        <source>Y</source>
+        <translation>Y</translation>
+    </message>
+</context>
+<context>
+    <name>StickerSettings</name>
+    <message>
+        <source>Up</source>
+        <translation>Upp</translation>
+    </message>
+    <message>
+        <source>Down</source>
+        <translation>Ner</translation>
+    </message>
+    <message>
+        <source>Use Default Stickers</source>
+        <translation>Använda standarddekaler</translation>
+    </message>
+    <message>
+        <source>Sticker Settings</source>
+        <translation>Dekalinställningar</translation>
+    </message>
+    <message>
+        <source>Vector Image Files (*.svg)</source>
+        <translation>Vektorbilder (*.svg)</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Lägg till</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ta bort</translation>
+    </message>
+    <message>
+        <source>Add Stickers</source>
+        <translation>Lägg till dekaler</translation>
+    </message>
+</context>
+<context>
+    <name>TrayIcon</name>
+    <message>
+        <source>Show Editor</source>
+        <translation>Visa redigerare</translation>
+    </message>
+</context>
+<context>
+    <name>TrayIconSettings</name>
+    <message>
+        <source>Use Tray Icon</source>
+        <translation>Använd systemfältsikon</translation>
+    </message>
+    <message>
+        <source>When enabled will add a Tray Icon to the TaskBar if the OS Window Manager supports it.
+Change requires restart.</source>
+        <translation>Vid aktivering läggs en ikon till i systemfältet, om operativsystemet stödjer det.
+Ändring kräver omstart.</translation>
+    </message>
+    <message>
+        <source>Minimize to Tray</source>
+        <translation>Minimera till systemfältet</translation>
+    </message>
+    <message>
+        <source>Start Minimized to Tray</source>
+        <translation>Starta minimerad i systemfältet</translation>
+    </message>
+    <message>
+        <source>Close to Tray</source>
+        <translation>Stäng till systemfältet</translation>
+    </message>
+    <message>
+        <source>Show Editor</source>
+        <translation>Visa redigerare</translation>
+    </message>
+    <message>
+        <source>Capture</source>
+        <translation>Klipp</translation>
+    </message>
+    <message>
+        <source>Default Tray Icon action</source>
+        <translation>Standardåtgärd för systemfältsikon</translation>
+    </message>
+    <message>
+        <source>Default Action that is triggered by left clicking the tray icon.</source>
+        <translation>Standardåtgärd som utlöses genom att vänsterklicka på systemfältsikonen.</translation>
+    </message>
+    <message>
+        <source>Tray Icon Settings</source>
+        <translation>Inställningar för systemfältsikon</translation>
+    </message>
+    <message>
+        <source>Use platform specific notification service</source>
+        <translation>Använd plattformsspecifik aviseringstjänst</translation>
+    </message>
+    <message>
+        <source>When enabled will use try to use platform specific notification
+service when such exists. Change requires restart to take effect.</source>
+        <translation>Vid aktivering försöker ksnip använda plattformsspecifik avisering
+när sådan finnes. Ändring kräver omstart för att tillämpas.</translation>
+    </message>
+    <message>
+        <source>Display Tray Icon notifications</source>
+        <translation>Visa systemfältsaviseringar</translation>
+    </message>
+</context>
+<context>
+    <name>UpdateWatermarkOperation</name>
+    <message>
+        <source>Select Image</source>
+        <translation>Välj bild</translation>
+    </message>
+    <message>
+        <source>Image Files</source>
+        <translation>Bildfiler</translation>
+    </message>
+</context>
+<context>
+    <name>UploadOperation</name>
+    <message>
+        <source>Upload Script Required</source>
+        <translation>Uppladdningsskript krävs</translation>
+    </message>
+    <message>
+        <source>Please add an upload script via Options &gt; Settings &gt; Upload Script</source>
+        <translation>Lägg till ett uppladdningsskript via Alternativ&gt; Inställningar&gt;Uppladdningsskript</translation>
+    </message>
+    <message>
+        <source>Capture Upload</source>
+        <translation>Skärmklippsuppladdning</translation>
+    </message>
+    <message>
+        <source>You are about to upload the image to an external destination, do you want to proceed?</source>
+        <translation>Du håller på att ladda upp bilden till en extern destination, vill du fortsätta?</translation>
+    </message>
+</context>
+<context>
+    <name>UploaderSettings</name>
+    <message>
+        <source>Ask for confirmation before uploading</source>
+        <translation>Bekräfta före uppladdning</translation>
+    </message>
+    <message>
+        <source>Uploader Type:</source>
+        <translation>Uppladdartyp:</translation>
+    </message>
+    <message>
+        <source>Imgur</source>
+        <translation>Imgur</translation>
+    </message>
+    <message>
+        <source>Script</source>
+        <translation>Skript</translation>
+    </message>
+    <message>
+        <source>Uploader</source>
+        <translation>Uppladdare</translation>
+    </message>
+    <message>
+        <source>FTP</source>
+        <translation>FTP</translation>
+    </message>
+</context>
+<context>
+    <name>VersionTab</name>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Kompilering</translation>
+    </message>
+    <message>
+        <source>Using:</source>
+        <translation>Använder:</translation>
+    </message>
+</context>
+<context>
+    <name>WatermarkSettings</name>
+    <message>
+        <source>Watermark Image</source>
+        <translation>Vattenstämpel</translation>
+    </message>
+    <message>
+        <source>Update</source>
+        <translation>Uppdatera</translation>
+    </message>
+    <message>
+        <source>Rotate Watermark</source>
+        <translation>Rotera vattenstämpel</translation>
+    </message>
+    <message>
+        <source>When enabled, Watermark will be added with a rotation of 45°</source>
+        <translation>Vid aktivering, roteras vattenstämpeln 45°</translation>
+    </message>
+    <message>
+        <source>Watermark Settings</source>
+        <translation>Vatenstämpelinställningar</translation>
+    </message>
+</context>
+</TS>

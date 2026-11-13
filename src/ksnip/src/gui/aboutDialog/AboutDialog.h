@@ -1,0 +1,58 @@
+/*
+ *  Copyright (C) 2016 Damir Porobic <https://github.com/damirporobic>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
+ *
+ */
+
+#ifndef KSNIP_ABOUTDIALOG_H
+#define KSNIP_ABOUTDIALOG_H
+
+#include <QDialog>
+#include <QTabWidget>
+#include <QPushButton>
+
+#include "AboutTab.h"
+#include "VersionTab.h"
+#include "AuthorTab.h"
+#include "DonateTab.h"
+#include "ContactTab.h"
+
+class QLabel;
+class MainWindow;
+
+class AboutDialog : public QDialog
+{
+    Q_OBJECT
+public:
+    explicit AboutDialog(QWidget *parent = nullptr);
+	~AboutDialog() override;
+
+private:
+    QVBoxLayout *mMainLayout;
+    QHBoxLayout *mHeaderLayout;
+    QTabWidget *mTabWidget;
+    QPushButton *mCloseButton;
+    AboutTab *mAboutTab;
+    VersionTab *mVersionTab;
+    AuthorTab *mAuthorTab;
+    DonateTab *mDonateTab;
+	ContactTab *mContactTab;
+
+    void createHeader();
+};
+
+#endif // KSNIP_ABOUTDIALOG_H

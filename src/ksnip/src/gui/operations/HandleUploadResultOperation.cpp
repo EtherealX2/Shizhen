@@ -1,0 +1,169 @@
+/*
+ * Copyright (C) 2019 Damir Porobic <damir.porobic@gmx.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
+ */
+
+#include "HandleUploadResultOperation.h"
+
+HandleUploadResultOperation::HandleUploadResultOperation(
+		const UploadResult &result,
+		const QSharedPointer<INotificationService> &notificationService,
+		const QSharedPointer<IClipboard> &clipboard,
+		const QSharedPointer<IDesktopService> &desktopService,
+		const QSharedPointer<IConfig> &config) :
+	mUploadResult(result),
+	mNotificationService(notificationService),
+	mConfig(config),
+	mClipboardService(clipboard),
+	mDesktopService(desktopService)
+{
+}
+
+bool HandleUploadResultOperation::execute()
+{
+	switch (mUploadResult.type) {
+		case UploaderType::Imgur:
+			handleImgurResult();
+			break;
+		case UploaderType::Script:
+			handleScriptResult();
+			break;
+		case UploaderType::Ftp:
+			handleFtpResult();
+			break;
+	}
+
+	return mUploadResult.status == UploadStatus::NoError;
+}
+
+void HandleUploadResultOperation::handleImgurResult()
+{
+	if(mUploadResult.status == UploadStatus::NoError) {
+		if (mConfig->imgurOpenLinkInBrowser()) {
+			OpenUrl(mUploadResult.content);
+		}
+
+		if (mConfig->imgurAlwaysCopyToClipboard()) {
+			copyToClipboard(mUploadResult.content);
+		}
+
+		notifyImgurSuccessfulUpload(mUploadResult.content);
+	} else {
+		handleUploadError();
+	}
+}
+
+void HandleUploadResultOperation::handleScriptResult()
+{
+	if(mUploadResult.status == UploadStatus::NoError) {
+		if (mConfig->uploadScriptCopyOutputToClipboard()) {
+			copyToClipboard(mUploadResult.content);
+		}
+
+		notifyScriptSuccessfulUpload();
+	} else {
+		handleUploadError();
+	}
+}
+
+void HandleUploadResultOperation::handleFtpResult()
+{
+	if(mUploadResult.status == UploadStatus::NoError) {
+		notifyFtpSuccessfulUpload();
+	} else {
+		handleUploadError();
+	}
+}
+
+void HandleUploadResultOperation::notifyFtpSuccessfulUpload() const
+{
+	NotifyOperation operation(tr("Upload Successful"), tr("FTP Upload finished successfully."), NotificationTypes::Information, mNotificationService, mConfig);
+	operation.execute();
+}
+
+void HandleUploadResultOperation::notifyScriptSuccessfulUpload() const
+{
+	NotifyOperation operation(tr("Upload Successful"), tr("Upload script %1  finished successfully.").arg(mConfig->uploadScriptPath()),
+							  NotificationTypes::Information, mNotificationService, mConfig);
+	operation.execute();
+}
+
+void HandleUploadResultOperation::notifyImgurSuccessfulUpload(const QString &url) const
+{
+	NotifyOperation operation(tr("Upload Successful"), tr("Uploaded to %1").arg(url), url, NotificationTypes::Information,
+							  mNotificationService, mConfig);
+	operation.execute();
+}
+
+void HandleUploadResultOperation::copyToClipboard(const QString &url) const
+{
+	mClipboardService->setText(url);
+}
+
+void HandleUploadResultOperation::OpenUrl(const QString &url) const
+{
+	mDesktopService->openUrl(url);
+}
+
+void HandleUploadResultOperation::handleUploadError()
+{
+	switch (mUploadResult.status) {
+		case UploadStatus::NoError:
+			// Nothing to report all good
+			break;
+		case UploadStatus::UnableToSaveTemporaryImage:
+			notifyFailedUpload(tr("Unable to save temporary image for upload."));
+			break;
+		case UploadStatus::FailedToStart:
+			notifyFailedUpload(tr("Unable to start process, check path and permissions."));
+			break;
+		case UploadStatus::Crashed:
+			notifyFailedUpload(tr("Process crashed"));
+			break;
+		case UploadStatus::TimedOut:
+			notifyFailedUpload(tr("Process timed out."));
+			break;
+		case UploadStatus::ReadError:
+			notifyFailedUpload(tr("Process read error."));
+			break;
+		case UploadStatus::WriteError:
+			notifyFailedUpload(tr("Process write error."));
+			break;
+		case UploadStatus::WebError:
+			notifyFailedUpload(tr("Web error, check console output."));
+			break;
+		case UploadStatus::UnknownError:
+			notifyFailedUpload(tr("Unknown error."));
+			break;
+		case UploadStatus::ScriptWroteToStdErr:
+			notifyFailedUpload(tr("Script wrote to StdErr."));
+			break;
+		case UploadStatus::ConnectionError:
+			notifyFailedUpload(tr("Connection Error."));
+			break;
+		case UploadStatus::PermissionError:
+			notifyFailedUpload(tr("Permission Error."));
+			break;
+	}
+}
+
+void HandleUploadResultOperation::notifyFailedUpload(const QString &message) const
+{
+	NotifyOperation operation(tr("Upload Failed"), message, NotificationTypes::Warning, mNotificationService, mConfig);
+	operation.execute();
+}
+

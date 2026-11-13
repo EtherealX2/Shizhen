@@ -1,0 +1,63 @@
+/*
+ * Copyright (C) 2021 Damir Porobic <damir.porobic@gmx.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
+ */
+
+#ifndef KSNIP_COMMANDLINECAPTUREHANDLER_H
+#define KSNIP_COMMANDLINECAPTUREHANDLER_H
+
+#include <QObject>
+
+#include "ICommandLineCaptureHandler.h"
+#include "CommandLineCaptureParameter.h"
+#include "src/backend/imageGrabber/IImageGrabber.h"
+#include "src/backend/saver/IImageSaver.h"
+#include "src/backend/saver/ISavePathProvider.h"
+#include "src/backend/uploader/IUploadHandler.h"
+#include "src/common/dtos/CaptureFromFileDto.h"
+#include "src/common/helper/EnumTranslator.h"
+#include "src/dependencyInjector/DependencyInjector.h"
+
+class CommandLineCaptureHandler : public ICommandLineCaptureHandler
+{
+public:
+	explicit CommandLineCaptureHandler(
+			const QSharedPointer<IImageGrabber> &imageGrabber,
+			const QSharedPointer<IUploadHandler> &uploadHandler,
+			const QSharedPointer<IImageSaver> &imageSaver,
+			const QSharedPointer<ISavePathProvider> &savePathProvider);
+	~CommandLineCaptureHandler() override = default;
+	void captureAndProcessScreenshot(const CommandLineCaptureParameter &parameter) override;
+	QList<CaptureModes> supportedCaptureModes() const override;
+
+private:
+	QSharedPointer<IImageGrabber> mImageGrabber;
+	QSharedPointer<IUploadHandler> mUploadHandler;
+	QSharedPointer<IImageSaver> mImageSaver;
+	QSharedPointer<ISavePathProvider> mSavePathProvider;
+	QString mSavePath;
+	bool mIsWithSave;
+	bool mIsWithUpload;
+	CaptureDto mCurrentCapture;
+
+private slots:
+	void processCapture(const CaptureDto &capture);
+	void saveCapture(const CaptureDto &capture);
+	void uploadFinished(const UploadResult &result);
+};
+
+#endif //KSNIP_COMMANDLINECAPTUREHANDLER_H

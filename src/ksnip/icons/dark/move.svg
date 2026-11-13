@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+  <g fill="#4d4d4d">
+    <rect x="225" y="100" width="50" height="300" rx="10"/>
+    <rect x="100" y="225" width="300" height="50" rx="10"/>
+    <path d="M250 20 L330 120 L170 120 Z"/>
+    <path d="M250 480 L330 380 L170 380 Z"/>
+    <path d="M20 250 L120 170 L120 330 Z"/>
+    <path d="M480 250 L380 170 L380 330 Z"/>
+  </g>
+</svg>

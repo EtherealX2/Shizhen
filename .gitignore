@@ -1,0 +1,14 @@
+# 构建产物
+src/build-*/
+src/prefix/
+
+# 运行时配置（随包生成，不应入库）
+Shizhen/config.ini
+
+# 编辑器临时文件
+*.user
+*.autosave
+
+# 绿色版二进制（走 Releases 附件，不入库）
+Shizhen/
+Shizhen.zip

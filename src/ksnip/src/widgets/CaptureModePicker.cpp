@@ -1,0 +1,155 @@
+/*
+ * Copyright (C) 2018 Damir Porobic <damir.porobic@gmx.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
+ */
+
+#include "CaptureModePicker.h"
+
+#include "src/gui/style/Theme.h"
+
+CaptureModePicker::CaptureModePicker(const QList<CaptureModes> &captureModes, const QSharedPointer<IIconLoader> &iconLoader)
+{
+    init(captureModes, iconLoader);
+
+    setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    setButtonText(tr("New"));
+}
+
+void CaptureModePicker::setCaptureMode(CaptureModes mode)
+{
+    for(auto action : mCaptureActions) {
+	    if (action->data().value<CaptureModes>() == mode) {
+		    setDefaultAction(action);
+		    mSelectedCaptureMode = mode;
+		    return;
+	    }
+    }
+}
+
+CaptureModes CaptureModePicker::captureMode() const
+{
+    return mSelectedCaptureMode;
+}
+
+void CaptureModePicker::init(const QList<CaptureModes> &captureModes, const QSharedPointer<IIconLoader> &iconLoader)
+{
+    auto menu = new CustomMenu();
+
+    if (isCaptureModeSupported(captureModes, CaptureModes::RectArea)) {
+	    auto action = createAction(
+				EnumTranslator::instance()->toTranslatedString(CaptureModes::RectArea),
+				tr("Draw a rectangular area with your mouse"),
+				Theme::instance()->icon(QLatin1String("square")),
+				CaptureModes::RectArea,
+				QKeySequence(Qt::SHIFT | Qt::Key_R));
+        menu->addAction(action);
+    }
+
+	if (isCaptureModeSupported(captureModes, CaptureModes::LastRectArea)) {
+		auto action = createAction(
+				EnumTranslator::instance()->toTranslatedString(CaptureModes::LastRectArea),
+			tr("Capture a screenshot of the last selected rectangular area"),
+				Theme::instance()->icon(QLatin1String("crop")),
+			CaptureModes::LastRectArea,
+			QKeySequence(Qt::SHIFT | Qt::Key_L));
+		menu->addAction(action);
+	}
+
+    if (isCaptureModeSupported(captureModes, CaptureModes::FullScreen)) {
+        auto action = createAction(
+				EnumTranslator::instance()->toTranslatedString(CaptureModes::FullScreen),
+				tr("Capture full screen including all monitors"),
+				Theme::instance()->icon(QLatin1String("maximize")),
+				CaptureModes::FullScreen,
+				QKeySequence(Qt::SHIFT | Qt::Key_F));
+        menu->addAction(action);
+    }
+
+    if (isCaptureModeSupported(captureModes, CaptureModes::CurrentScreen)) {
+	    auto action = createAction(
+				EnumTranslator::instance()->toTranslatedString(CaptureModes::CurrentScreen),
+	    		tr("Capture screen where the mouse is located"),
+				Theme::instance()->icon(QLatin1String("monitor")),
+	    		CaptureModes::CurrentScreen,
+				QKeySequence(Qt::SHIFT | Qt::Key_M));
+        menu->addAction(action);
+    }
+
+    if (isCaptureModeSupported(captureModes, CaptureModes::ActiveWindow)) {
+	    auto action = createAction(
+				EnumTranslator::instance()->toTranslatedString(CaptureModes::ActiveWindow),
+	    		tr("Capture window that currently has focus"),
+				Theme::instance()->icon(QLatin1String("appwindow")),
+	    		CaptureModes::ActiveWindow,
+				QKeySequence(Qt::SHIFT | Qt::Key_A));
+        menu->addAction(action);
+    }
+
+    if (isCaptureModeSupported(captureModes, CaptureModes::WindowUnderCursor)) {
+        auto action = createAction(
+				EnumTranslator::instance()->toTranslatedString(CaptureModes::WindowUnderCursor),
+				tr("Capture that is currently under the mouse cursor"),
+				Theme::instance()->icon(QLatin1String("pointer")),
+				CaptureModes::WindowUnderCursor,
+				QKeySequence(Qt::SHIFT | Qt::Key_U));
+        menu->addAction(action);
+    }
+
+    if (isCaptureModeSupported(captureModes, CaptureModes::Portal)) {
+        auto action = createAction(
+				EnumTranslator::instance()->toTranslatedString(CaptureModes::Portal),
+                tr("Uses the screenshot Portal for taking screenshot"),
+				Theme::instance()->icon(QLatin1String("monitor")),
+                CaptureModes::Portal,
+                QKeySequence(Qt::SHIFT | Qt::Key_T));
+        menu->addAction(action);
+    }
+
+    if (!mCaptureActions.isEmpty()) {
+        setDefaultAction(mCaptureActions.first());
+    }
+    setMenu(menu);
+}
+
+bool CaptureModePicker::isCaptureModeSupported(const QList<CaptureModes> &captureModes, CaptureModes captureMode)
+{
+    return captureModes.contains(captureMode);
+}
+
+QAction *CaptureModePicker::createAction(const QString &text, const QString &tooltip, const QIcon &icon, CaptureModes captureMode, const QKeySequence &shortcut)
+{
+    auto action = new QAction(this);
+    action->setIconText(text);
+    action->setToolTip(tooltip);
+	action->setIcon(icon);
+	action->setShortcut(shortcut);
+	action->setData(static_cast<int>(captureMode));
+    connect(action, &QAction::triggered, [this, captureMode]() { selectCaptureMode(captureMode); } );
+	mCaptureActions.append(action);
+    return action;
+}
+
+void CaptureModePicker::selectCaptureMode(CaptureModes mode)
+{
+    mSelectedCaptureMode = mode;
+    emit captureModeSelected(mode);
+}
+
+QList<QAction*> CaptureModePicker::captureActions() const
+{
+	return mCaptureActions;
+}

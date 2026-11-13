@@ -1,0 +1,74 @@
+name: ksnip
+base: core18
+adopt-info: ksnip
+icon: desktop/ksnip.svg
+grade: stable
+confinement: strict
+compression: lzo
+
+apps:
+  ksnip:
+    command: bin/ksnip
+    common-id: org.ksnip.ksnip
+    environment:
+      # Set theme fix on gnome/gtk
+      XDG_CURRENT_DESKTOP: $XDG_CURRENT_DESKTOP:Unity:Unity7
+      QT_QPA_PLATFORMTHEME: gtk3
+    desktop: share/applications/org.ksnip.ksnip.desktop
+    extensions: [kde-neon]
+    plugs:
+      - home
+      - removable-media
+      - unity7
+      - network
+      - network-manager-observe
+      - network-observe
+      - opengl
+
+architectures:
+  - build-on: amd64
+
+parts:
+  ksnip:
+    source: .
+    plugin: cmake
+    parse-info: [share/metainfo/org.ksnip.ksnip.appdata.xml]
+    after:
+      - kimageannotator
+    build-snaps:
+      - kde-frameworks-5-core18-sdk
+    build-packages:
+      - libglvnd-dev
+      - libx11-dev
+    stage-packages:
+      - curl
+      - ftp
+    configflags:
+      - -DCMAKE_FIND_ROOT_PATH=/snap/kde-frameworks-5-core18-sdk/current;/snap/kimageannotator/current
+      - -DBUILD_TESTS:BOOL=OFF
+    override-pull: |
+      snapcraftctl pull
+      sed -i 's|Icon=.*|Icon=share/icons/hicolor/scalable/apps/ksnip.svg|g' desktop/org.ksnip.ksnip.desktop
+      snapcraftctl set-version $(cat CMakeLists.txt | grep project\(ksnip | cut -d" " -f5 | cut -d")" -f1)
+  kimageannotator:
+    source: https://github.com/ksnip/kImageAnnotator.git
+    plugin: cmake
+    after:
+      - kcolorpicker
+    configflags:
+      - -DCMAKE_FIND_ROOT_PATH=/snap/kde-frameworks-5-core18-sdk/current;/snap/kcolorpicker/current
+      - -DBUILD_EXAMPLE:BOOL=OFF
+      - -DBUILD_TESTS:BOOL=OFF
+  kcolorpicker:
+    source: https://github.com/ksnip/kColorPicker.git
+    plugin: cmake
+    configflags:
+      - -DCMAKE_FIND_ROOT_PATH=/snap/kde-frameworks-5-core18-sdk/current
+  cleanup:
+    after: [kcolorpicker, kimageannotator, ksnip]
+    plugin: nil
+    build-snaps: [ kde-frameworks-5-core18 ]
+    override-prime: |
+        set -eux
+        cd /snap/kde-frameworks-5-core18/current
+        find . -type f,l -exec rm -f $SNAPCRAFT_PRIME/{} \;
