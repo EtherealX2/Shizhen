@@ -6,6 +6,7 @@
 ![qt](https://img.shields.io/badge/Qt-5.15.2-41CD52?logo=qt&logoColor=white)
 ![size](https://img.shields.io/badge/portable-38.4%20MB-success)
 ![license](https://img.shields.io/badge/license-GPL--3.0-blue)
+[![release](https://img.shields.io/github/v/release/EtherealX2/Shizhen?color=blue)](../../releases/latest)
 
 ![悬浮工具条](screenshots/02-toolbar-light.png)
 
@@ -87,7 +88,7 @@
 
 ## 快速开始
 
-1. 到 [Releases](../../releases) 下载最新绿色包，解压到任意目录（**不要**放进 `C:\Program Files`，除非接受配置回退到 `%LOCALAPPDATA%`）。
+1. 到 [Releases](https://github.com/EtherealX2/Shizhen/releases/latest) 下载 `Shizhen-x.y.z-win64.zip`，解压到任意目录（**不要**放进 `C:\Program Files`，除非接受配置回退到 `%LOCALAPPDATA%`）。
 2. 双击 `Shizhen.exe`。启动后只在托盘出现图标，并弹出一次提示告诉你当前快捷键。
 3. 按 `Alt + Shift + R` 拖拽框选，松开后出现悬浮工具条 → 标注 → 点 `✓` 复制或点保存图标落盘。
 4. 右键托盘图标 → **设置**，可以改快捷键、保存目录、主题与 OCR 引擎。
@@ -182,7 +183,8 @@ python -m aqt install-qt windows desktop 5.15.2 win64_mingw81 -O C:/Qt \
 python -m aqt install-tool windows desktop tools_mingw qt.tools.win64_mingw810 -O C:/Qt
 
 # 构建（MSYS2 / Git Bash）
-cd src
+git clone https://github.com/EtherealX2/Shizhen.git
+cd Shizhen/src
 bash build-official-qt.sh
 ```
 
