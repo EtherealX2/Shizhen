@@ -6,7 +6,7 @@
 ![qt](https://img.shields.io/badge/Qt-5.15.2-41CD52?logo=qt&logoColor=white)
 ![size](https://img.shields.io/badge/portable-38.4%20MB-success)
 ![license](https://img.shields.io/badge/license-GPL--3.0-blue)
-[![release](https://img.shields.io/github/v/release/EtherealX2/Shizhen?color=blue)](../../releases/latest)
+[![release](https://img.shields.io/github/v/release/EtherealX2/Shizhen?color=blue)](https://github.com/EtherealX2/Shizhen/releases/latest)
 
 ![悬浮工具条](screenshots/02-toolbar-light.png)
 
