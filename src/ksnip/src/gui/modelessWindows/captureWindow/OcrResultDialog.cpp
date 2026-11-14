@@ -66,7 +66,7 @@ OcrResultDialog::OcrResultDialog(const QString &text, QWidget *parent) :
 
 	auto titleLabel = new QLabel(tr("OCR 识别结果"), this);
 	titleLabel->setProperty("role", QLatin1String("title"));
-	mHintLabel = new QLabel(tr("识别文本可直接编辑，复制后排版与原文换行一致。"), this);
+	mHintLabel = new QLabel(tr("识别结果只读，点「复制文本」可取得全文并保留原有换行。"), this);
 	mHintLabel->setProperty("role", QLatin1String("hint"));
 	mHintLabel->setWordWrap(true);
 

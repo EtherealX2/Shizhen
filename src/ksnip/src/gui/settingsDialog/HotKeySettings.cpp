@@ -20,6 +20,7 @@
 #include "HotKeySettings.h"
 
 #include "src/backend/config/ConfigOptions.h"
+#include "src/gui/style/Ui.h"
 
 HotKeySettings::HotKeySettings(const QList<CaptureModes> &captureModes, const QSharedPointer<IPlatformChecker> &platformChecker, const QSharedPointer<IConfig> &config) :
 	mConfig(config),
@@ -113,13 +114,14 @@ void HotKeySettings::initGui()
 	mWindowUnderCursorLabel->setText(tr("光标下窗口截图"));
 	mPortalLabel->setText(tr("使用 Portal 截图"));
 
-	// shadcn form rhythm: one shared label column, quiet text buttons for the
-	// per-row reset action so seven of them do not compete with the fields.
+	// BoardUI form rhythm: one shared label column, quiet text buttons for the
+	// per-row reset action so seven of them do not compete with the fields. The
+	// column width comes from Ui so this page lines up with the other segments.
 	const QList<QLabel*> fieldLabels = { mRectAreaLabel, mLastRectAreaLabel, mFullScreenLabel,
 			mCurrentScreenLabel, mActiveWindowLabel, mWindowUnderCursorLabel, mPortalLabel };
 	for(auto label : fieldLabels) {
 		label->setObjectName(QLatin1String("liteFieldLabel"));
-		label->setFixedWidth(120);
+		label->setFixedWidth(Ui::FormLabelWidth);
 		label->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 	}
 
@@ -151,9 +153,9 @@ void HotKeySettings::initGui()
 
 	mLayout->setAlignment(Qt::AlignTop);
 	mLayout->setContentsMargins(0, 0, 0, 0);
-	mLayout->setHorizontalSpacing(16);
+	mLayout->setHorizontalSpacing(Ui::FormGap);
 	mLayout->setVerticalSpacing(10);
-	mLayout->setColumnMinimumWidth(0, 120);
+	mLayout->setColumnMinimumWidth(0, Ui::FormLabelWidth);
 	mLayout->setColumnStretch(1, 1);
 	mLayout->addWidget(mEnableGlobalHotKeysCheckBox, 0, 0, 1, 3);
 

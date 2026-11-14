@@ -10,7 +10,7 @@
 
 ![悬浮工具条](screenshots/02-toolbar-light.png)
 
-> 基于 [ksnip](https://github.com/ksnip/ksnip) 1.11.0 + [kImageAnnotator](https://github.com/DamirPorobic/kImageAnnotator) 0.7.2 二次开发，界面按 [shadcn/ui](https://ui.shadcn.com/) 设计语言重做，并按「真正 Lite」的目标重新裁剪了工具链与依赖（80 MB → 38.4 MB，ICU / HarfBuzz / GLib 全部移除）。
+> 基于 [ksnip](https://github.com/ksnip/ksnip) 1.11.0 + [kImageAnnotator](https://github.com/DamirPorobic/kImageAnnotator) 0.7.2 二次开发，界面按 [BoardUI](https://www.boardui.com/zh-hans) 的设计语言重做，并按「真正 Lite」的目标重新裁剪了工具链与依赖（80 MB → 38.4 MB，ICU / HarfBuzz / GLib 全部移除）。
 
 ---
 
@@ -36,7 +36,7 @@
 - **6 种取景方式**：矩形区域、上次矩形区域、全屏（所有监视器）、当前屏幕、活动窗口、光标下窗口，每种都有独立全局快捷键。
 - **托盘一键截图**：右键托盘图标可直接选「矩形区域 / 活动窗口 / 全屏」，双击托盘图标按默认方式截图。
 - **取景框辅助**：放大镜（像素级取点）、坐标与尺寸标尺、八个拖拽手柄、方向键像素级微调、`Ctrl` / `Alt` + 方向键单独调整角点。
-- **可调行为**：0–30 秒延迟截图、是否包含鼠标光标、选择区域时是否冻结屏幕（默认冻结）。
+- **可调行为**：0–30 秒延迟截图（预设档位）、是否包含鼠标光标、选择区域时是否冻结屏幕（默认冻结）。
 
 ### 标注
 
@@ -140,7 +140,7 @@
 | 页面 | 内容 |
 |---|---|
 | **快捷键** | 全局快捷键开关与 6 项可用组合键（另列 Portal，Windows 上置灰）、鼠标侧键开关与映射、恢复默认 |
-| **截图与保存** | 截图延迟 0–30 s、包含鼠标光标、冻结屏幕、保存目录、保存格式（png/jpg/bmp/webp）、自动复制到剪贴板、自动保存 |
+| **截图与保存** | 截图延迟（不延迟 / 1·2·3·5·8·10·15·20·30 秒）、包含鼠标光标、冻结屏幕、保存目录、保存格式（png/jpg/bmp/webp）、自动复制到剪贴板、自动保存 |
 | **OCR** | 引擎切换（Windows 原生 / Ollama）、服务地址（默认 `http://127.0.0.1:11434`）、视觉模型、提示词、测试连接 |
 | **通用** | 主题（跟随系统 / 浅色 / 深色）、开机自启、截图时显示左上角操作提示 |
 
@@ -227,9 +227,9 @@ bash build-official-qt.sh
 src/
 ├─ ksnip/             主程序（Qt Widgets）
 │  └─ src/
-│     ├─ gui/style/                    shadcn 令牌层 + Ui 工厂 + 全局 QSS
+│     ├─ gui/style/                    BoardUI 令牌层 + Ui 工厂 + 全局 QSS
 │     ├─ gui/modelessWindows/          截图悬浮窗、OCR 结果面板
-│     ├─ gui/settingsDialog/           shadcn 风格设置对话框
+│     ├─ gui/settingsDialog/           BoardUI 风格设置对话框
 │     ├─ gui/snippingArea/             取景框（放大镜、标尺、手柄）
 │     ├─ backend/ocr/                  Windows OCR 与 Ollama 两条通道
 │     ├─ backend/config/               config.ini 便携配置
@@ -270,7 +270,7 @@ Windows 10 / 11 64 位为验证环境。截图与标注按 Win7 SP1 目标编译
 - [ksnip](https://github.com/ksnip/ksnip) — 截图与编辑框架，© Damir Porobic
 - [kImageAnnotator](https://github.com/DamirPorobic/kImageAnnotator) — 标注引擎
 - [kColorPicker](https://github.com/DamirPorobic/kColorPicker) — 取色器
-- [shadcn/ui](https://ui.shadcn.com/) — 设计语言与令牌体系
+- [BoardUI](https://www.boardui.com/zh-hans) — 设计语言与令牌体系
 - [Lucide](https://lucide.dev/) — 图标风格参考（本项目自绘 56 枚 SVG）
 - [Qt](https://www.qt.io/) 5.15.2 — 应用框架
 

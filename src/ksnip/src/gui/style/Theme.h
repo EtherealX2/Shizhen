@@ -40,6 +40,12 @@ public:
 
 	QColor background() const;
 	QColor surface() const;
+	// One step above the card: menus, popups, the selected segment and the
+	// floating capture toolbar. Light themes go to pure white, dark themes lift
+	// instead of sink (a darker thumb inside a lighter track reads as pressed).
+	QColor surfaceRaised() const;
+	// Editable fields sit one step above or below the card depending on theme.
+	QColor fieldSurface() const;
 	QColor surfaceAlt() const;
 	QColor border() const;
 	QColor borderStrong() const;
@@ -51,6 +57,9 @@ public:
 	QColor textTertiary() const;
 	QColor accent() const;
 	QColor accentHover() const;
+	// Bottom stop of the vertical primary-button gradient (BoardUI paints its
+	// primary surface as a two-stop ramp instead of a flat fill).
+	QColor accentDeep() const;
 	QColor accentSoft() const;
 	QColor accentBorder() const;
 	QColor onAccent() const;

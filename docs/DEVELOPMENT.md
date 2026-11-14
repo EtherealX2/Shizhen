@@ -81,16 +81,19 @@ ksnip/
 - `windeployqt` 在纯净环境里会报 “Unable to find the platform plugin”，构建脚本改为**直接拷贝最小插件集**，结果可控且可复现。
 - `build-official-qt.sh` 里 `ROOT` 需用 `cygpath -m` 转成 `D:/...`：MSYS 风格 `/d/...` 传给 `CMAKE_PREFIX_PATH` 时，ksnip 的 `find_package(kColorPicker-Qt5)` 会失败。
 
-## 四、界面实现（shadcn/ui 重构）
+## 四、界面实现（BoardUI 设计语言）
 
 | 层次 | 说明 |
 |---|---|
-| 令牌层 | `gui/style/Theme.cpp` 把 shadcn neutral 的 oklch 换算成 sRGB 双主题令牌（background / card / muted / border / input / primary / ring / destructive / success），正文 14px、控件 36px、卡片圆角 12px |
+| 令牌层 | `gui/style/Theme.cpp` 按 [BoardUI](https://www.boardui.com/zh-hans) 的语义令牌重写（background / card / raised / field / muted / border / input / primary / ring / destructive / success）。画布着色、卡片纯白、hairline 描边，主按钮是 `accent-500 → accent-600` 的垂直渐变 |
+| 字阶 | Title 20/600（对话框标题）、Headline 16/600（卡片标题）、Body 14、Body2 13（说明）、Caption 12；字段标签 14/500，正文行高由控件高度 36px 约束 |
+| 圆角 | 按钮 / 输入框 10px，卡片与菜单 12px，悬浮工具条 14px，小控件 8px |
+| 抬升表面 | `surfaceRaised()`：浅色主题取纯白、深色主题取比卡片亮一档的灰 —— 深色下选中态不能比容器更暗，否则看起来像“按下去了” |
 | 工厂层 | `gui/style/Ui.h/.cpp`：`card()` `hline()` `cardTitle()` `mutedLabel()` `button(text, 变体)`，5 种按钮变体在四个设置页复用 |
 | 设置对话框 | 分段控件替代 QTabWidget；自绘 footer（取消 outline + 确定 primary）；卡片分组、两列对齐、高度随当前页自适应并居中屏幕 |
-| 悬浮工具条 | 圆角容器 + 投影、32×32 图标按钮、竖线分隔、✕ ghost / ✔ primary |
+| 悬浮工具条 | 圆角容器 + 投影、32×32 图标按钮、竖线分隔、✕ ghost / ✔ 蓝色渐变。选中工具用 accent 10% 底 + 30% 描边 |
 | 图标 | 56 个 Lucide 风格 SVG，每图标两套墨色（Qt SVG 不支持 `currentColor`），`Theme::icon()` 按主题挑选 |
-| 已知限制 | QSS 无过渡动画；深色标题栏依赖 DWM（Win10 1809+）；托盘菜单去掉了系统投影，只剩 1px 描边 |
+| 已知限制 | QSS 无过渡动画，渐变只能是两档静态色；`QFrame` 必须设 `WA_StyledBackground` 才会绘制背景；`QFrame#x:disabled QLabel` 这类后代选择器在 Qt 5.15 里会误命中所有实例，改用别的表达方式；`QSpinBox` 在 QSS 下首个字形会被裁切，改用下拉框 |
 
 ## 五、OCR 结果窗交互修复（两轮）
 

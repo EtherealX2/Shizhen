@@ -65,7 +65,7 @@ private:
 	QComboBox *mSideButton1ComboBox;
 	QComboBox *mSideButton2ComboBox;
 
-	QSpinBox *mDelaySpinBox;
+	QComboBox *mDelayComboBox;
 	QCheckBox *mCaptureCursorCheckBox;
 	QCheckBox *mFreezeScreenCheckBox;
 	QLineEdit *mSaveDirectoryLineEdit;

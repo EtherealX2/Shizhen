@@ -30,11 +30,17 @@ class QPushButton;
 class QVBoxLayout;
 class QWidget;
 
-// Small factory layer that keeps every screen on the same shadcn/ui primitives:
+// Small factory layer that keeps every screen on the same BoardUI primitives:
 // card surfaces, 36px controls, segmented tabs, variant buttons and hairline
 // separators. Layouts are returned so callers can keep building in place.
 namespace Ui
 {
+// Shared form rhythm. Every settings page pins its label column to the same
+// width and the same gap, so switching segments does not shift the fields
+// sideways. Pages that build their own grid must use these instead of literals.
+constexpr int FormLabelWidth = 132;
+constexpr int FormGap = 18;
+
 enum class ButtonVariant
 {
 	Primary,
@@ -44,7 +50,7 @@ enum class ButtonVariant
 	Destructive
 };
 
-// shadcn Card with an optional header (title + description) and a body layout.
+// BoardUI card: white surface, hairline border, optional header and a body layout.
 QFrame *card(QWidget *parent, const QString &title, const QString &description, QVBoxLayout *&body);
 QFrame *hline(QWidget *parent = nullptr);
 QFrame *vline(QWidget *parent = nullptr);

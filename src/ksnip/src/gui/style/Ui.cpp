@@ -36,10 +36,14 @@ QFrame *card(QWidget *parent, const QString &title, const QString &description, 
 {
 	auto frame = new QFrame(parent);
 	frame->setObjectName(QLatin1String("liteCard"));
+	frame->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+	// Without this the stylesheet paints the border but not the surface, so a
+	// card is invisible against the canvas.
+	frame->setAttribute(Qt::WA_StyledBackground, true);
 
 	auto outer = new QVBoxLayout(frame);
-	outer->setContentsMargins(20, 18, 20, 20);
-	outer->setSpacing(4);
+	outer->setContentsMargins(20, 18, 20, 18);
+	outer->setSpacing(5);
 
 	auto titleLabel = cardTitle(title, frame);
 	outer->addWidget(titleLabel);
@@ -66,6 +70,7 @@ QFrame *hline(QWidget *parent)
 	line->setObjectName(QLatin1String("liteHLine"));
 	line->setFrameShape(QFrame::HLine);
 	line->setFixedHeight(1);
+	line->setAttribute(Qt::WA_StyledBackground, true);
 	return line;
 }
 
@@ -75,6 +80,7 @@ QFrame *vline(QWidget *parent)
 	line->setObjectName(QLatin1String("liteVLine"));
 	line->setFrameShape(QFrame::VLine);
 	line->setFixedWidth(1);
+	line->setAttribute(Qt::WA_StyledBackground, true);
 	return line;
 }
 

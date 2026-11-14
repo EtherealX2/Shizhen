@@ -40,9 +40,10 @@
 #include "src/gui/style/Ui.h"
 
 namespace {
-// One shared label column keeps every form row on the same optical grid.
-constexpr int kLabelWidth = 120;
-constexpr int kFieldGap = 16;
+// One shared label column keeps every form row on the same optical grid. The
+// width lives in Ui so the hotkey page, which builds its own grid, matches it.
+constexpr int kLabelWidth = Ui::FormLabelWidth;
+constexpr int kFieldGap = Ui::FormGap;
 constexpr int kControlHeight = 36;
 
 QWidget *formRow(QWidget *parent, const QString &labelText, QWidget *field, bool fullWidth = true)
@@ -116,7 +117,7 @@ LiteSettingsDialog::LiteSettingsDialog(
 	mMouseHookEnabledCheckBox(new QCheckBox(this)),
 	mSideButton1ComboBox(new QComboBox(this)),
 	mSideButton2ComboBox(new QComboBox(this)),
-	mDelaySpinBox(new QSpinBox(this)),
+	mDelayComboBox(new QComboBox(this)),
 	mCaptureCursorCheckBox(new QCheckBox(this)),
 	mFreezeScreenCheckBox(new QCheckBox(this)),
 	mSaveDirectoryLineEdit(new QLineEdit(this)),
@@ -196,9 +197,9 @@ void LiteSettingsDialog::setupHeader(QVBoxLayout *layout)
 	description->setProperty("role", QLatin1String("hint"));
 
 	layout->addWidget(title);
-	layout->addSpacing(5);
+	layout->addSpacing(6);
 	layout->addWidget(description);
-	layout->addSpacing(18);
+	layout->addSpacing(20);
 }
 
 void LiteSettingsDialog::setupSegments(QVBoxLayout *layout)
@@ -208,7 +209,7 @@ void LiteSettingsDialog::setupSegments(QVBoxLayout *layout)
 	mSegmentedBar->setAttribute(Qt::WA_StyledBackground, true);
 	auto barLayout = new QHBoxLayout(mSegmentedBar);
 	barLayout->setContentsMargins(3, 3, 3, 3);
-	barLayout->setSpacing(2);
+	barLayout->setSpacing(3);
 
 	mPages = new QStackedWidget(this);
 	mPages->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
@@ -229,7 +230,7 @@ void LiteSettingsDialog::addPage(QWidget *page, const QString &title)
 	auto segment = new QPushButton(title, mSegmentedBar);
 	segment->setCheckable(true);
 	segment->setCursor(Qt::PointingHandCursor);
-	segment->setFixedHeight(30);
+	segment->setFixedHeight(32);
 	segment->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 	segment->setProperty("segment", true);
 
@@ -350,11 +351,14 @@ QWidget* LiteSettingsDialog::createCaptureTab()
 	QVBoxLayout *captureBody;
 	auto captureCard = Ui::card(page, tr("截图"), tr("控制取景方式与截取范围。"), captureBody);
 
-	mDelaySpinBox->setRange(0, 30);
-	mDelaySpinBox->setSuffix(tr(" 秒"));
-	mDelaySpinBox->setFixedWidth(140);
-	Ui::setControlHeight(mDelaySpinBox, kControlHeight);
-	captureBody->addWidget(formRow(captureCard, tr("截图延迟"), mDelaySpinBox, false));
+	// Discrete presets instead of a spin box: matches the other dropdowns and
+	// avoids the Qt style-sheet quirk that clips a spin box's first glyph.
+	for(int seconds : {0, 1, 2, 3, 5, 8, 10, 15, 20, 30}) {
+		mDelayComboBox->addItem(seconds == 0 ? tr("不延迟") : tr("%1 秒").arg(seconds), seconds);
+	}
+	mDelayComboBox->setFixedWidth(140);
+	Ui::setControlHeight(mDelayComboBox, kControlHeight);
+	captureBody->addWidget(formRow(captureCard, tr("截图延迟"), mDelayComboBox, false));
 
 	mCaptureCursorCheckBox->setText(tr("截图中包含鼠标光标"));
 	captureBody->addWidget(checkboxRow(captureCard, mCaptureCursorCheckBox));
@@ -504,7 +508,9 @@ void LiteSettingsDialog::loadSettings()
 	mSideButton1ComboBox->setCurrentIndex(mSideButton1ComboBox->findData(mConfig->mouseSideButton1Mode()));
 	mSideButton2ComboBox->setCurrentIndex(mSideButton2ComboBox->findData(mConfig->mouseSideButton2Mode()));
 
-	mDelaySpinBox->setValue(mConfig->captureDelay() / 1000);
+	auto delaySeconds = mConfig->captureDelay() / 1000;
+	auto delayIndex = mDelayComboBox->findData(delaySeconds);
+	mDelayComboBox->setCurrentIndex(delayIndex >= 0 ? delayIndex : 0);
 	mCaptureCursorCheckBox->setChecked(mConfig->captureCursor());
 	mFreezeScreenCheckBox->setChecked(mConfig->freezeImageWhileSnippingEnabled());
 	mSaveDirectoryLineEdit->setText(QDir::toNativeSeparators(mConfig->saveDirectory()));
@@ -534,7 +540,7 @@ void LiteSettingsDialog::saveSettings()
 	mConfig->setMouseSideButton1Mode(mSideButton1ComboBox->currentData().toInt());
 	mConfig->setMouseSideButton2Mode(mSideButton2ComboBox->currentData().toInt());
 
-	mConfig->setCaptureDelay(mDelaySpinBox->value() * 1000);
+	mConfig->setCaptureDelay(mDelayComboBox->currentData().toInt() * 1000);
 	mConfig->setCaptureCursor(mCaptureCursorCheckBox->isChecked());
 	mConfig->setFreezeImageWhileSnippingEnabled(mFreezeScreenCheckBox->isChecked());
 	mConfig->setSaveDirectory(QDir::fromNativeSeparators(mSaveDirectoryLineEdit->text()));
