@@ -5,19 +5,21 @@
 ## 一、目录结构
 
 ```
-ksnip/
-├─ Shizhen/                绿色版，整夹可拷任意路径运行（38.4 MB）
-│  ├─ Shizhen.exe          3.4 MB
+Shizhen/
+├─ dist/                   绿色版，整夹可拷任意路径运行
+│  ├─ Shizhen.exe
 │  ├─ README.txt           给使用者看的说明
 │  ├─ Qt5*.dll(8)          Core / Gui / Widgets / Network / Svg / PrintSupport / Xml / WinExtras
 │  ├─ libgcc_s_seh-1.dll、libstdc++-6.dll、libwinpthread-1.dll
-│  ├─ platforms\ imageformats\ iconengines\ printsupport\   Qt 插件（最小集）
-│  └─ translations\        仅 zh_CN / zh_Hant
+│  ├─ platforms/ imageformats/ iconengines/ printsupport/   Qt 插件（最小集）
+│  └─ translations/        仅 zh_CN / zh_Hant
 ├─ src/                    完整可编译源码
 │  ├─ ksnip/  kImageAnnotator/  kColorPicker/
+│  ├─ build-shizhen/ 等     CMake 构建目录（不入库）
 │  └─ build-official-qt.sh 一键重建脚本（官方 Qt 工具链）
 ├─ screenshots/            实机截图（浅色 / 深色）
 ├─ docs/                   本文件
+├─ LICENSE                 GPL-3.0
 └─ README.md
 ```
 

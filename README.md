@@ -188,7 +188,7 @@ cd Shizhen/src
 bash build-official-qt.sh
 ```
 
-脚本依次编译 kColorPicker → kImageAnnotator → ksnip，产物安装到 `Shizhen/`，并自动部署最小 Qt 运行库（插件的 `qsvg.dll`、`qsvgicon.dll` 不能漏，否则图标会变空白方块）。8 核机器从零构建约 1 分半。
+脚本依次编译 kColorPicker → kImageAnnotator → ksnip，产物安装到 `dist/`，并自动部署最小 Qt 运行库（插件的 `qsvg.dll`、`qsvgicon.dll` 不能漏，否则图标会变空白方块）。8 核机器从零构建约 1 分半。
 
 可用环境变量覆盖默认路径：`QTDIR`、`MINGW`、`PREFIX`、`DIST`。
 

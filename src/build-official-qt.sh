@@ -23,7 +23,7 @@ fi
 QTDIR="${QTDIR:-C:/Qt/5.15.2/mingw81_64}"
 MINGW="${MINGW:-C:/Qt/Tools/mingw810_64/bin}"
 PREFIX="${PREFIX:-$ROOT/prefix}"
-DIST="${DIST:-$ROOT/../Shizhen}"
+DIST="${DIST:-$ROOT/../dist}"
 
 export PATH="$MINGW:$PATH"
 
