@@ -95,7 +95,9 @@ private:
 	void setupSegments(QVBoxLayout *layout);
 	void addPage(QWidget *page, const QString &title);
 	void showPage(int index);
-	void fitToCurrentPage();
+	// Sizes the page viewport once to the tallest of the four pages so switching
+	// segments never resizes or re-centres the window.
+	void applyBaseLayout();
 	void centerOnScreen();
 
 	QWidget* createHotKeyTab(const QList<CaptureModes> &captureModes, const QSharedPointer<IPlatformChecker> &platformChecker);

@@ -18,9 +18,11 @@
 
 #include "LiteSettingsDialog.h"
 #include "src/common/AppInfo.h"
+#include "BuildConfig.h"
 
 #include <QApplication>
 #include <QCursor>
+#include <QDesktopServices>
 #include <QFrame>
 #include <QGuiApplication>
 #include <QHBoxLayout>
@@ -31,6 +33,7 @@
 #include <QShowEvent>
 #include <QStackedWidget>
 #include <QTimer>
+#include <QUrl>
 #include <QVBoxLayout>
 #include <QCoreApplication>
 #include <QSettings>
@@ -251,9 +254,8 @@ void LiteSettingsDialog::showPage(int index)
 	for(int i = 0; i < mSegmentButtons.size(); ++i) {
 		mSegmentButtons[i]->setChecked(i == index);
 	}
-	// Page geometry settles on the next event loop turn, then the dialog can
-	// shrink or grow to exactly the height of the visible page.
-	QTimer::singleShot(0, this, &LiteSettingsDialog::fitToCurrentPage);
+	// No resize here on purpose: every page shares the base height applied on the
+	// first show, so switching segments keeps the window perfectly still.
 }
 
 void LiteSettingsDialog::showEvent(QShowEvent *event)
@@ -263,6 +265,7 @@ void LiteSettingsDialog::showEvent(QShowEvent *event)
 		return;
 	}
 	mCentered = true;
+	applyBaseLayout();
 	centerOnScreen();
 	// The window is not mapped yet while showEvent runs; re-assert activation so
 	// the dialog does not open behind the window the capture was taken from.
@@ -281,33 +284,52 @@ void LiteSettingsDialog::centerOnScreen()
 	activateWindow();
 }
 
-void LiteSettingsDialog::fitToCurrentPage()
+void LiteSettingsDialog::applyBaseLayout()
 {
-	auto page = mPages->currentWidget();
-	if(page == nullptr) {
+	if(mPages->count() == 0) {
 		return;
 	}
 
-	auto available = QGuiApplication::primaryScreen()->availableGeometry();
-	auto chrome = height() - mPageScroll->height();
-	auto maxPageHeight = qMax(240, available.height() * 4 / 5 - chrome);
-
-	// Measure with the scroll bar suppressed; only show it when the page really
-	// overflows, otherwise it draws a permanent hairline over the card edge.
+	// Measure with the scroll bar suppressed, otherwise its 10px would narrow the
+	// page and change the wrapping we are about to measure.
 	mPageScroll->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-	layout()->activate();
-	page->adjustSize();
-	auto needed = page->sizeHint().height();
 
-	if(needed > maxPageHeight) {
-		mPageScroll->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-		mPageScroll->setFixedHeight(maxPageHeight);
-	} else {
-		mPageScroll->setFixedHeight(needed);
+	// Every page has to be measured as the current one: QStackedWidget only lays
+	// out the visible page, so the others would report a stale height and, with
+	// word-wrapped labels, a stale width.
+	const auto visible = mPages->currentIndex();
+	int needed = 0;
+	for(int i = 0; i < mPages->count(); ++i) {
+		mPages->setCurrentIndex(i);
+		layout()->activate();
+		auto page = mPages->widget(i);
+		page->ensurePolished();
+		page->adjustSize();
+		needed = qMax(needed, page->sizeHint().height());
 	}
+	mPages->setCurrentIndex(visible);
 
+	// Reserve the tallest page for all of them. Shorter pages keep the same
+	// canvas and simply end higher, which reads as one surface instead of four
+	// windows that happen to share a frame.
+	mPageScroll->setFixedHeight(needed);
+	layout()->activate();
 	adjustSize();
-	centerOnScreen();
+
+	// Only if that height does not fit the screen does the viewport shrink and
+	// start scrolling; the base stays identical across pages either way.
+	auto screen = QGuiApplication::screenAt(QCursor::pos());
+	if(screen == nullptr) {
+		screen = QGuiApplication::primaryScreen();
+	}
+	const auto limit = screen->availableGeometry().height() * 4 / 5;
+	if(height() > limit) {
+		const auto chrome = height() - needed;
+		mPageScroll->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+		mPageScroll->setFixedHeight(qMax(240, limit - chrome));
+		layout()->activate();
+		adjustSize();
+	}
 }
 
 QWidget* LiteSettingsDialog::createHotKeyTab(const QList<CaptureModes> &captureModes, const QSharedPointer<IPlatformChecker> &platformChecker)
@@ -486,6 +508,38 @@ QWidget* LiteSettingsDialog::createGeneralTab()
 	mShowSnippingHintCheckBox->setToolTip(tr("默认仅首次截图显示，之后自动关闭；勾选可重新开启"));
 	behaviorBody->addWidget(checkboxRow(behaviorCard, mShowSnippingHintCheckBox));
 	layout->addWidget(behaviorCard);
+
+	// The base height is the tallest page, so this one needs a third card or it
+	// ends in a hole. It also carries the version and licence that the removed
+	// About dialog used to hold, which nothing else in the Lite build exposes.
+	QVBoxLayout *metaBody;
+	auto metaCard = Ui::card(page, tr("配置与许可"), tr("便携运行：设置写在程序目录的 config.ini，不写注册表。"), metaBody);
+
+	auto openFolder = Ui::button(tr("打开所在目录"), Ui::ButtonVariant::Outline, metaCard);
+	openFolder->setMinimumWidth(120);
+	openFolder->setToolTip(AppInfo::configFilePath());
+	connect(openFolder, &QPushButton::clicked, this, [](){
+		QDesktopServices::openUrl(QUrl::fromLocalFile(QFileInfo(AppInfo::configFilePath()).absolutePath()));
+	});
+	metaBody->addWidget(formRow(metaCard, tr("配置文件"), openFolder, false));
+
+	auto licenseField = new QWidget(metaCard);
+	auto licenseLayout = new QHBoxLayout(licenseField);
+	licenseLayout->setContentsMargins(0, 0, 0, 0);
+	licenseLayout->setSpacing(8);
+	auto licenseLabel = new QLabel(tr("GPL-3.0 · 基于 ksnip %1").arg(QLatin1String(KSNIP_VERSION)), licenseField);
+	licenseLabel->setProperty("role", QLatin1String("mono"));
+	licenseLayout->addWidget(licenseLabel, 0, Qt::AlignVCenter);
+	auto sourceButton = Ui::button(tr("源码仓库"), Ui::ButtonVariant::Outline, metaCard);
+	sourceButton->setMinimumWidth(96);
+	connect(sourceButton, &QPushButton::clicked, this, [](){
+		QDesktopServices::openUrl(QUrl(QLatin1String("https://github.com/EtherealX2/Shizhen")));
+	});
+	licenseLayout->addWidget(sourceButton, 0, Qt::AlignVCenter);
+	// Not full width: the pair keeps a readable distance from the licence text
+	// instead of pinning the button to the far edge of the card.
+	metaBody->addWidget(formRow(metaCard, tr("开源许可"), licenseField, false));
+	layout->addWidget(metaCard);
 
 	layout->addStretch();
 	return page;

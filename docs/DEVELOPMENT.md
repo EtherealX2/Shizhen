@@ -90,7 +90,7 @@ ksnip/
 | 圆角 | 按钮 / 输入框 10px，卡片与菜单 12px，悬浮工具条 14px，小控件 8px |
 | 抬升表面 | `surfaceRaised()`：浅色主题取纯白、深色主题取比卡片亮一档的灰 —— 深色下选中态不能比容器更暗，否则看起来像“按下去了” |
 | 工厂层 | `gui/style/Ui.h/.cpp`：`card()` `hline()` `cardTitle()` `mutedLabel()` `button(text, 变体)`，5 种按钮变体在四个设置页复用 |
-| 设置对话框 | 分段控件替代 QTabWidget；自绘 footer（取消 outline + 确定 primary）；卡片分组、两列对齐、高度随当前页自适应并居中屏幕 |
+| 设置对话框 | 分段控件替代 QTabWidget；自绘 footer（取消 outline + 确定 primary）；卡片分组、两列对齐；四页共用同一个基底高度（取最高页，首次显示时测量一次），切换分段时窗口不改变尺寸也不重新居中 |
 | 悬浮工具条 | 圆角容器 + 投影、32×32 图标按钮、竖线分隔、✕ ghost / ✔ 蓝色渐变。选中工具用 accent 10% 底 + 30% 描边 |
 | 图标 | 56 个 Lucide 风格 SVG，每图标两套墨色（Qt SVG 不支持 `currentColor`），`Theme::icon()` 按主题挑选 |
 | 已知限制 | QSS 无过渡动画，渐变只能是两档静态色；`QFrame` 必须设 `WA_StyledBackground` 才会绘制背景；`QFrame#x:disabled QLabel` 这类后代选择器在 Qt 5.15 里会误命中所有实例，改用别的表达方式；`QSpinBox` 在 QSS 下首个字形会被裁切，改用下拉框 |
